@@ -327,6 +327,9 @@ footer{display:none}
 .dash-skip a{color:var(--text2);cursor:pointer;text-decoration:underline}
 .dash-skip a:hover{color:var(--text)}
 
+
+
+
 /* PRINT */
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -421,6 +424,107 @@ footer{display:none}
   font-weight:700;flex-shrink:0;margin-top:1px}
 .legal-text{color:var(--text2);flex:1;line-height:1.4}
 
+/* HEALTH FACILITY CARDS */
+.hf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:16px}
+.hf-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;border-left:5px solid #cc0000;box-shadow:var(--shadow);transition:box-shadow .15s}
+.hf-card:hover{box-shadow:var(--shadow-md)}
+.hf-hdr{padding:10px 14px;background:linear-gradient(135deg,#cc0000,#990000);color:#fff;display:flex;align-items:center;gap:10px}
+.hf-level{font-size:10px;background:rgba(255,255,255,.2);padding:2px 7px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.hf-name{font-size:13px;font-weight:700;font-family:var(--font-head)}
+.hf-code{font-size:10px;opacity:.7;font-weight:400;margin-top:1px}
+.hf-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+.hf-stat{padding:7px 12px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.hf-stat:nth-child(even){border-right:none}
+.hf-stat-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px;font-weight:500}
+.hf-stat-val{font-size:12px;font-weight:600;color:var(--text);line-height:1.3}
+.hf-features{padding:10px 12px;border-bottom:1px solid var(--border)}
+.hf-feat-lbl{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.3px;margin-bottom:5px;font-weight:600}
+.hf-feat-list{display:flex;flex-wrap:wrap;gap:3px}
+.hf-feat{font-size:10px;padding:2px 6px;background:var(--red-bg);color:var(--red);border-radius:3px;border:1px solid rgba(139,0,0,.15)}
+.hf-note{padding:8px 12px;font-size:11px;color:var(--text2);font-style:italic;background:var(--bg3);line-height:1.45}
+/* HEALTH & EDU CALCULATORS */
+.calc-hero{text-align:center;padding:20px;background:linear-gradient(135deg,var(--green2),var(--green3));
+  border-radius:var(--radius);margin-bottom:16px;color:#fff}
+.calc-hero h3{font-size:28px;font-weight:700;font-family:var(--font-head);margin-bottom:3px}
+.calc-hero p{font-size:11px;opacity:.75}
+.fac-result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:14px}
+.fac-result-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:10px 12px;border-left:3px solid}
+.frc-count{font-size:22px;font-weight:700;font-family:var(--font-head)}
+.frc-name{font-size:11px;color:var(--text2);margin-top:2px}
+.frc-site{font-size:10px;color:var(--text3);margin-top:1px}
+.frc-status{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px;margin-top:4px}
+.status-req{background:rgba(42,90,48,.15);color:var(--green2)}
+.status-opt{background:var(--gold-bg);color:var(--gold-text)}
+.status-no{background:var(--bg4);color:var(--text3)}
+/* BUFFER MATRIX */
+.buf-matrix{width:100%;border-collapse:collapse;font-size:11px}
+.buf-matrix th{background:var(--green2);color:#fff;padding:7px 10px;text-align:left;font-size:10px;
+  text-transform:uppercase;letter-spacing:.4px;font-weight:700;position:sticky;top:0;z-index:2}
+.buf-matrix td{padding:6px 10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
+.buf-matrix tr:hover td{background:var(--bg3)}
+.buf-cat-hdr td{background:rgba(42,90,48,.08);font-weight:700;font-size:10px;color:var(--green2);
+  text-transform:uppercase;letter-spacing:.5px;padding:8px 10px}
+.buf-crit{color:var(--red);font-weight:700}
+.buf-warn{color:var(--gold-text);font-weight:600}
+.buf-ok{color:var(--green2);font-weight:600}
+.buf-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.buf-filter-btn{padding:4px 11px;border:1px solid var(--border2);border-radius:12px;font-size:11px;
+  cursor:pointer;background:var(--bg2);color:var(--text2);font-family:var(--font-body)}
+.buf-filter-btn.on{background:var(--green2);color:#fff;border-color:var(--green2)}
+/* KNOWLEDGE BASE */
+.kb-search-wrap{position:relative;margin-bottom:14px}
+.kb-search{width:100%;padding:11px 16px 11px 42px;border:2px solid var(--border2);border-radius:var(--radius);
+  font-size:14px;background:var(--bg);color:var(--text);outline:none;font-family:var(--font-body)}
+.kb-search:focus{border-color:var(--green2);box-shadow:0 0 0 3px rgba(42,90,48,.12)}
+.kb-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--text3)}
+.kb-results{display:flex;flex-direction:column;gap:10px}
+.kb-group{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.kb-group-hdr{padding:8px 14px;background:var(--green2);color:#fff;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+.kb-item{padding:8px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.kb-item:last-child{border-bottom:none}
+.kb-item:hover{background:var(--bg4)}
+.kb-item-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.kb-item-text{font-size:11px;color:var(--text2);line-height:1.4}
+.kb-item-tags{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap}
+.kb-tag{font-size:10px;padding:1px 6px;background:var(--bg2);border:1px solid var(--border2);
+  border-radius:3px;color:var(--text2)}
+.kb-empty{padding:32px;text-align:center;color:var(--text2);font-size:13px}
+.kb-hint{font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.6;padding:8px 12px;
+  background:var(--bg3);border-radius:var(--radius-sm);border:1px solid var(--border)}
+
+/* ── GHANA PLANNING EDUCATION COLOUR CONVENTION ──────────────────
+   Educational uses: Yellow fill (#FFFDE0) + Red outline (#CC0000)
+   Per conventional Ghanaian planning scheme colour standards
+   reflected in LUSPA planning maps ─────────────────────────────── */
+:root{
+  --edu-fill:#FFFDE0;
+  --edu-fill-mid:#FFF8C8;
+  --edu-fill-deep:#FFF0A0;
+  --edu-border:#CC0000;
+  --edu-text:#8B0000;
+  --edu-badge-bg:#FFFF99;
+}
+.edu-zone-card{border-left-color:var(--edu-border)!important}
+.edu-zone-card .card-hdr{background:var(--edu-fill)!important}
+.edu-zone-card .zbadge{background:var(--edu-badge-bg)!important;color:var(--edu-text)!important;
+  border-color:var(--edu-border)!important;border-width:1.5px!important}
+.edu-zone-card:hover{box-shadow:0 4px 20px rgba(204,0,0,.18)!important}
+/* Education facility calculator cards */
+.edu-frc{border-left-color:var(--edu-border)!important}
+.edu-frc .frc-count{color:var(--edu-border)!important}
+/* Education knowledge-base results */
+.kb-group.edu-kb .kb-group-hdr{background:var(--edu-border)!important}
+.kb-item.edu-kb-item{border-left:3px solid var(--edu-border)}
+.kb-item.edu-kb-item:hover{background:var(--edu-fill)!important}
+/* Education legend swatch border */
+.leg-edu-swatch{outline:2px solid var(--edu-border)!important;outline-offset:1px}
+/* Education section header accent */
+.edu-section-hdr{border-left:4px solid var(--edu-border);padding-left:10px;
+  background:linear-gradient(90deg,var(--edu-fill),transparent)}
+
 </style>
 </head>
 <body>
@@ -443,6 +547,10 @@ footer{display:none}
       <button class="cpill" onclick="setCtx('urban',this)">Built-up</button>
       <button class="cpill" onclick="setCtx('greenfield',this)">Greenfield</button>
       <button class="cpill" onclick="setCtx('rural',this)">Rural</button>
+    </div>
+    <div id="userPill" onclick="toggleUserMenu()" title="Account">
+      <div class="user-avatar" id="userAvatar">?</div>
+      <div><div class="user-name" id="userName">User</div><span class="user-role-tag" id="userRoleTag"></span></div>
     </div>
     <button class="hdr-btn" onclick="openDashboard()" title="Planning Dashboard" style="display:flex;align-items:center;gap:5px;font-weight:600">&#127968; Dashboard</button>
     <button class="hdr-btn" onclick="openModal('shortcuts')" title="Keyboard shortcuts">&#9109;</button>
@@ -493,6 +601,16 @@ footer{display:none}
       <button class="sb-tool-btn" onclick="openModal('tsc')">&#128101; TSC Team Composition</button>
       <button class="sb-tool-btn" onclick="openModal('dataguide')">&#128196; Data Collection Guide</button>
       <button class="sb-tool-btn" onclick="openModal('legalref')">&#9878;&#65039; Legal References</button>
+    </div>
+  </div>
+  <div class="sb-section">
+    <div class="sb-label">Facility Planning</div>
+    <div class="sb-sub">
+      <button class="sb-tool-btn" onclick="openModal('healthModule')">&#129706; Health Facility Standards</button>
+      <button class="sb-tool-btn" onclick="openModal('healthCalc')">&#9877;&#65039; Health Facility Calculator</button>
+      <button class="sb-tool-btn" onclick="openModal('eduCalc')">&#127979; Education Facility Calc</button>
+      <button class="sb-tool-btn" onclick="openModal('bufferMatrix')">&#9888;&#65039; Buffer Standards Matrix</button>
+      <button class="sb-tool-btn" onclick="openModal('knowledgeBase')">&#128270; Planning Knowledge Base</button>
     </div>
   </div>
 </aside>
@@ -595,19 +713,19 @@ var zones=[
  prohibit:['Mass displacement infrastructure','Cemeteries/Crematoriums','Large industrial','Gas Filling Stations']},
 
 {cat:'education',code:'Ed P',name:'Pre-Schools & Basic Schools',ctx:['greenfield','urban'],
- lc:'#BBAA00',bg:'#FFFCE6',density:0,
+ lc:'#CC0000',bg:'#FFFDE0',density:0,
  std:{'Nursery/KG site':'Min 0.5\u00a0ac\u00a0/\u00a02,500\u00a0m\u00b2','Primary school site':'Min 3\u00a0ac\u00a0/\u00a012,140\u00a0m\u00b2','JHS site':'Min 4\u00a0ac\u00a0/\u00a016,200\u00a0m\u00b2','Nursery catchment':'1,000\u20135,000 pop; 1.25\u00a0km','Primary catchment':'1,500\u20136,000 pop; max 2.5\u00a0km','JHS catchment':'5,000\u201310,000 pop; max 3.2\u00a0km','Classroom':'9\u00a0\u00d7\u00a07\u00a0m (35\u201340 pupils)','Toilets':'1 per 30\u201340 pupils (segregated)','Parking':'Min 5 spaces'},
  permit:['Classrooms, Offices, Labs','Teachers Accommodation','Libraries, Workshops','Playgrounds, Canteen'],
  prohibit:['Transport/Warehouses','Animal Husbandry','Slaughterhouses','Industries','Crematorium/Cemeteries']},
 
 {cat:'education',code:'Ed S',name:'Senior High / TVET Schools',ctx:['greenfield','urban'],
- lc:'#998800',bg:'#FFFAD0',density:0,
+ lc:'#CC0000',bg:'#FFF8C8',density:0,
  std:{'Min site area':'6\u00a0ac\u00a0/\u00a024,281\u00a0m\u00b2','Catchment':'10,000\u201320,000 pop','Max commute':'4\u00a0km','Setback (all sides)':'Min 10\u00a0m','Dormitory':'Min 4\u20135\u00a0m\u00b2/student','Min open space':'20%','Sports':'Football (1.7\u00a0ac), athletics, courts','Library':'120\u2013200\u00a0m\u00b2'},
  permit:['Academic buildings, Labs','Dormitories (boarding)','Staff housing','Sports facilities','School clinics','Bookshops'],
  prohibit:['Non-school residential','Markets','Industries','Animal Husbandry (except teaching)','Transport warehouses']},
 
 {cat:'education',code:'Ed T',name:'Tertiary Institutions',ctx:['greenfield','urban'],
- lc:'#776600',bg:'#FFF8B8',density:0,
+ lc:'#CC0000',bg:'#FFF0A0',density:0,
  std:{'Min site area':'30\u00a0acres minimum','Catchment population':'50,000+','Lecture hall':'100\u2013500 capacity','Auditorium':'Min 1,000 capacity','Internal zones':'Academic / Residential / Sports / Commercial / Research'},
  permit:['Hostels, Staff accommodation','Lecture Halls, Labs','Hospitals/Clinics, Police Stations','Commercial (banks, shops)','Research farms, Places of Worship'],
  prohibit:['Industries','Major transport terminals','Warehouses','Large Markets','Saw milling','Crematorium']},
@@ -1040,6 +1158,7 @@ function tagLabel(c){return{urban:'Built-up',builtup:'Built-up',greenfield:'Gree
 
 function cardHtml(z){
   var uid='zc-'+z.code.replace(/[^a-zA-Z0-9]/g,'');
+  var extraClass=z.cat==='education'?' edu-zone-card':'';
   var tags=z.ctx.map(function(c){return '<span class="ztag">'+tagLabel(c)+'</span>';}).join('');
   var fav=isFav(z.code);
   var note=S.notes[z.code]||'';
@@ -1053,7 +1172,7 @@ function cardHtml(z){
       +makePlotSVG(z.diag.w,z.diag.d,calcZones[z.diag.k])+'</div>';
   }
   var noteHtml=note?'<div class="card-note" onclick="openNoteModal(\''+z.code+'\')">&#128396; '+escHtml(note)+'</div>':'';
-  return '<div class="zone-card" id="'+uid+'" style="border-left-color:'+z.lc+'">'
+  return '<div class="zone-card'+extraClass+'" id="'+uid+'" style="border-left-color:'+z.lc+'">'
     +'<div class="card-hdr">'
       +'<span class="zbadge" style="background:'+z.bg+';color:'+z.lc+';border-color:'+z.lc+'60">'+z.code+'</span>'
       +'<div class="zinfo">'
@@ -1153,7 +1272,12 @@ function openModal(id,extra){
     consult:'Stakeholder Consultation Requirements',
     tsc:'Technical Sub-Committee (TSC) Composition',
     dataguide:'Data Collection Guide',
-    legalref:'Legal & Policy References'};
+    legalref:'Legal & Policy References',
+    healthModule:'Health Facility Planning Standards',
+    healthCalc:'Health Facility Calculator',
+    eduCalc:'Educational Facility Calculator',
+    bufferMatrix:'Buffer & Separation Standards Matrix',
+    knowledgeBase:'Ghana Planning Knowledge Base'};
   var subs={calc:'Enter dimensions to see setbacks, buildable area and a live diagram',community_calc:'Input site area, population & residential mix to auto-calculate required facilities, plot yield, road and utility reserves',compat_matrix:'Select any land use to instantly see which zones permit or prohibit it across all LUSPA zones',permit_assistant:'Input plot size, zone and building type to get a full compliance check against LUSPA zoning standards',gis_export:'Export zone colours, codes, densities and standards for direct use in QGIS, ArcGIS and GIS tools',road_wizard:'Select a road type to get full reservation standards: ROW, carriageway, sidewalks, drains and utility corridors',
     yield:'Calculate expected plots, units and population for a site',
     buffer:'Required buffer distance for any water body type with slope adjustments',
@@ -1171,7 +1295,12 @@ function openModal(id,extra){
     consult:'Minimum 3 stakeholder consultation workshops required — LUSPA Manual 2025',
     tsc:'Composition per Act 925 and L.I. 2384 — LUSPA Manual 2025',
     dataguide:'Drawn from LUSPA Manual Appendix 4 — Data Collection Guide 2025',
-    legalref:'Key legislation governing spatial planning in Ghana'};
+    legalref:'Key legislation governing spatial planning in Ghana',
+    healthModule:'Detailed standards for all health facility levels — CHPS through District Hospital',
+    healthCalc:'Input population — get required health facilities, land area and service coverage',
+    eduCalc:'Input population — get required schools at every level with total land requirements',
+    bufferMatrix:'All LUSPA mandatory separation distances consolidated in one searchable table',
+    knowledgeBase:'Search across all zones, health, education, buffer and planning manual content simultaneously'};
   document.getElementById('modalTitle').textContent=titles[id]||id;
   document.getElementById('modalSub').textContent=subs[id]||'';
   var body=document.getElementById('modalBody');
@@ -1190,6 +1319,10 @@ function openModal(id,extra){
   if(id==='finder')setupFinder();
   if(id==='checklist')setupChecklist(extra);
   if(id==='allnotes')renderAllNotes();
+  if(id==='healthCalc')setTimeout(runHealthCalc,80);
+  if(id==='eduCalc')setTimeout(runEduCalc,80);
+  if(id==='bufferMatrix')setTimeout(function(){renderBufMatrix('all');},80);
+  if(id==='knowledgeBase')setTimeout(function(){var el=document.getElementById('kbSearch');if(el)el.focus();},100);
 }
 function closeModal(){document.getElementById('overlay').classList.remove('op');}
 function overlayClick(e){if(e.target===document.getElementById('overlay'))closeModal();}
@@ -1218,6 +1351,11 @@ function getModalContent(id,extra){
   if(id==='tsc')return modalTSC();
   if(id==='dataguide')return modalDataGuide();
   if(id==='legalref')return modalLegalRef();
+  if(id==='healthModule')return modalHealthModule();
+  if(id==='healthCalc')return modalHealthCalc();
+  if(id==='eduCalc')return modalEduCalc();
+  if(id==='bufferMatrix')return modalBufferMatrix();
+  if(id==='knowledgeBase')return modalKnowledgeBase();
   return '';
 }
 
@@ -2847,6 +2985,35 @@ function updateRoadWizard(){
 }
 
 
+
+// ── LOGIN ────────────────────────────────────────────────────────
+var currentUser = null;
+var selectedRole = null;
+var roleLabels = {
+  planner:'Spatial Planner', officer:'Dev. Control Officer',
+  engineer:'Engineer / Surveyor', student:'Student / Researcher',
+  commissioner:'Land Commissioner', politician:'Assembly Member / DCE', guest:'Guest'
+};
+
+
+function setUserPill(user){
+  var pill = document.getElementById('userPill');
+  var av   = document.getElementById('userAvatar');
+  var nm   = document.getElementById('userName');
+  var rt   = document.getElementById('userRoleTag');
+  var mn   = document.getElementById('menuName');
+  var mr   = document.getElementById('menuRole');
+  if(!pill) return;
+  pill.style.display = 'flex';
+  var initials = user.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
+  if(av) av.textContent = initials || '?';
+  if(nm) nm.textContent = user.name;
+  if(rt) rt.textContent = roleLabels[user.role]||user.role;
+  var loc = [user.district, user.region].filter(Boolean).join(', ');
+  if(mn) mn.textContent = user.name + (user.org?' · '+user.org:'');
+  if(mr) mr.textContent = (roleLabels[user.role]||user.role) + (loc?' | '+loc:'');
+}
+
 // ── PLANNING DASHBOARD ────────────────────────────────────────────
 var dashMode = null;
 var dashConfigs = {
@@ -2933,6 +3100,509 @@ function checkDashboard(){
   }
 }
 
+
+// ══════════════════════════════════════════════════════════════════
+// GHANA PLANNING HUB v7 — NEW MODULES
+// ══════════════════════════════════════════════════════════════════
+
+// ── HEALTH FACILITY DATA ──────────────────────────────────────────
+var healthFacData=[
+  {code:'CHPS',name:'CHPS Compound',full:'Community Health Planning & Services',
+   level:'Community Level',borderColor:'#ff9999',
+   stats:{
+     'Catchment Population':'500 \u2013 2,000 persons',
+     'Site Area':'0.1 \u2013 0.2 ac (400\u2013800 m\u00b2)',
+     'Building Footprint':'150 \u2013 400 m\u00b2',
+     'Inpatient Beds':'4 \u2013 6 (maternity/obs.)',
+     'Parking':'Min 2 spaces',
+     'Service Radius':'5 km (rural); 2 km (urban)',
+     'Buffer \u2014 industrial':'Min 100 m',
+     'Buffer \u2014 water body':'Min 30 m'
+   },
+   features:['OPD consultations','Maternity & delivery','Child welfare','Immunisation','ANC visits','Community outreach'],
+   note:'Most basic formal health facility. Must be within comfortable walking distance for all community members. Operator: Ghana Health Service (GHS). No separate LUSPA zone \u2014 sited within Re or Ed zones.'},
+  {code:'CLI',name:'Clinic / Outpatient Clinic',full:'General Practice / Private Clinic',
+   level:'Neighbourhood Level',borderColor:'#ff6666',
+   stats:{
+     'Catchment Population':'5,000 \u2013 15,000 persons',
+     'Site Area':'0.5 \u2013 1 ac (2,000\u20134,000 m\u00b2)',
+     'Building Footprint':'500 \u2013 1,500 m\u00b2',
+     'Observation Beds':'0 \u2013 6 beds',
+     'Parking':'Min 5 spaces',
+     'Service Radius':'3 \u2013 5 km',
+     'Buffer \u2014 industrial':'Min 200 m',
+     'Buffer \u2014 pollution source':'Min 200 m',
+     'Buffer \u2014 water body':'Min 30 m'
+   },
+   features:['OPD consultation','Minor procedures','Laboratory','Pharmacy','Ante-natal care','Family planning'],
+   note:'Private or public. Must register with GHS and obtain planning permit. Neighbourhood clinics up to 250 m\u00b2 are conditionally permitted in Re A and Re B zones.'},
+  {code:'HC',name:'Health Centre',full:'Health Centre (Sub-district)',
+   level:'Sub-district Level',borderColor:'#ee4444',
+   stats:{
+     'Catchment Population':'10,000 \u2013 20,000 persons',
+     'Site Area':'1 \u2013 2 ac (4,000\u20138,000 m\u00b2)',
+     'Building Footprint':'1,000 \u2013 3,000 m\u00b2',
+     'Inpatient Beds':'15 \u2013 20 beds',
+     'Parking':'Min 10 spaces',
+     'Service Radius':'8 \u2013 10 km',
+     'Staff Accommodation':'On-site required',
+     'Buffer \u2014 industrial':'Min 300 m',
+     'Buffer \u2014 pollution source':'Min 300 m'
+   },
+   features:['24-hour emergency','Inpatient wards','OPD','Maternity unit','Laboratory','Minor theatre','Emergency services','Dental (where available)'],
+   note:'Must have reliable electricity and piped water supply. Provides 24-hour emergency care. Requires ambulance bay. Sub-district reference facility.'},
+  {code:'HPo',name:'Polyclinic',full:'Polyclinic / Urban Health Centre',
+   level:'District / Urban Level',borderColor:'#cc0000',
+   stats:{
+     'Catchment Population':'20,000 \u2013 50,000 persons',
+     'LUSPA Min Site Area':'4 acres (16,000 m\u00b2)',
+     'Building Footprint':'3,000 \u2013 6,000 m\u00b2',
+     'Inpatient Beds':'Min 15 beds',
+     'Parking':'Min 20 spaces',
+     'Travel Time to Catchment':'15 \u2013 20 minutes',
+     'Buffer \u2014 pollution sources':'Min 500 m (LUSPA mandatory)',
+     'Terrain requirement':'Flat, well-drained, non-flood prone'
+   },
+   features:['Specialist OPD clinics','Minor theatre','X-ray & Ultrasound imaging','Pharmacy','Laboratory','Maternity','24/7 Emergency','Ambulance bay'],
+   note:'LUSPA H Po zone. Minimum 4 acres required by LUSPA Zoning Guidelines 2025. Must have 24/7 emergency; ambulance access mandatory; 500 m minimum from pollution sources.'},
+  {code:'HD',name:'District Hospital',full:'District Hospital',
+   level:'District Level',borderColor:'#aa0000',
+   stats:{
+     'Catchment Population':'50,000 \u2013 200,000 persons',
+     'LUSPA Min Site Area':'10 acres (40,000 m\u00b2)',
+     'Building Footprint':'8,000 \u2013 20,000 m\u00b2',
+     'Inpatient Beds':'100 \u2013 300 beds',
+     'Parking':'Min 50 spaces',
+     'Ambulance Access':'24/7 required (LUSPA)',
+     'Referral Reach':'Within 1 hour by transport',
+     'Buffer \u2014 pollution / industrial':'Min 1 km',
+     'Helipad':'Required'
+   },
+   features:['Specialist wards','Major theatre','ICU','Mortuary','Pharmacy','X-ray / CT','Blood bank','24/7 Emergency','Helipad','Staff accommodation'],
+   note:'LUSPA H D zone. Minimum 10 acres required. 24/7 ambulance access mandatory. Serves entire district. Helipad required for emergency air evacuation. Location: district capital or major town.'},
+  {code:'HR',name:'Regional / Teaching Hospital',full:'Regional & Teaching / National Hospital',
+   level:'Regional / National Level',borderColor:'#880000',
+   stats:{
+     'Catchment Population':'Entire region or national',
+     'Min Site Area':'Min 25 \u2013 50 acres',
+     'Inpatient Beds':'300 \u2013 800+ beds',
+     'Parking':'Min 150 spaces',
+     'Service Level':'Full specialist & super-specialist',
+     'Teaching function':'Research & medical education',
+     'Buffer \u2014 industrial':'Min 1.5 km',
+     'LUSPA Zone':'H R (Regional) / H T (Teaching/National)'
+   },
+   features:['All specialist services','Advanced theatres','ICU/HDU','Full imaging suite','Research facilities','Medical education','International patient services','Blood bank','Helipad'],
+   note:'H R and H T zones. Detailed planning standards refer to the full LUSPA 2025 document. Typically sited at regional capital or national capital. Serves as apex referral centre.'}
+];
+
+// ── HEALTH MODULE ─────────────────────────────────────────────────
+function modalHealthModule(){
+  var cards=healthFacData.map(function(h){
+    var statsHtml=Object.entries(h.stats).map(function(s){
+      return '<div class="hf-stat"><div class="hf-stat-lbl">'+s[0]+'</div><div class="hf-stat-val">'+s[1]+'</div></div>';
+    }).join('');
+    var feats=h.features.map(function(f){return '<span class="hf-feat">'+f+'</span>';}).join('');
+    return '<div class="hf-card" style="border-left-color:'+h.borderColor+'">'
+      +'<div class="hf-hdr" style="background:linear-gradient(135deg,'+h.borderColor+','+darkenHex(h.borderColor,40)+')">'
+        +'<div><div class="hf-name">'+h.name+'</div><div class="hf-code">'+h.full+'</div></div>'
+        +'<span class="hf-level">'+h.level+'</span>'
+      +'</div>'
+      +'<div class="hf-stats">'+statsHtml+'</div>'
+      +'<div class="hf-features"><div class="hf-feat-lbl">Key services & functions</div><div class="hf-feat-list">'+feats+'</div></div>'
+      +'<div class="hf-note">'+h.note+'</div>'
+    +'</div>';
+  }).join('');
+  return '<div class="steps-intro">Detailed planning standards for all health facility levels in Ghana per LUSPA Zoning Guidelines 2025. Each facility type has specific site area, catchment population, service radius, buffer and infrastructure requirements.</div>'
+    +'<div class="hf-grid">'+cards+'</div>'
+    +'<div class="step-note">&#9432; Source: LUSPA Revised Zoning Guidelines & Planning Standards, September 2025. Always confirm Health facility siting with the Ghana Health Service (GHS) and relevant district health directorate in addition to LUSPA requirements.</div>';
+}
+function darkenHex(hex,amount){
+  try{var h=hex.replace('#','');var r=Math.max(0,parseInt(h.slice(0,2),16)-amount),g=Math.max(0,parseInt(h.slice(2,4),16)-amount),b=Math.max(0,parseInt(h.slice(4,6),16)-amount);return '#'+[r,g,b].map(function(v){return v.toString(16).padStart(2,'0');}).join('');}
+  catch(e){return hex;}
+}
+
+// ── HEALTH FACILITY CALCULATOR ────────────────────────────────────
+function modalHealthCalc(){
+  return '<div class="steps-intro">Enter the planning population for your community or site. The calculator applies LUSPA health facility thresholds to determine the type and number of health facilities required, along with total land area needed.</div>'
+    +'<div class="form-grid" style="max-width:500px">'
+    +'<div class="fld"><label>Planning Population</label><input type="number" id="hcPop" value="15000" min="100" step="100" oninput="runHealthCalc()"/></div>'
+    +'<div class="fld"><label>Context</label><select id="hcCtx" onchange="runHealthCalc()"><option value="urban">Urban / Peri-urban</option><option value="rural">Rural</option></select></div>'
+    +'</div>'
+    +'<div id="hcResults"></div>';
+}
+function runHealthCalc(){
+  var popEl=document.getElementById('hcPop'),ctxEl=document.getElementById('hcCtx'),resEl=document.getElementById('hcResults');
+  if(!popEl||!resEl)return;
+  var pop=parseInt(popEl.value)||15000;
+  var ctx=ctxEl?ctxEl.value:'urban';
+  // Thresholds per LUSPA standards
+  var thresholds=[
+    {code:'CHPS',name:'CHPS Compound',thresh:1500,siteAcEach:0.15,minCount:1,color:'#ff9999',
+     service:'5 km (rural) / 2 km (urban)',note:'1 per 500\u20132,000 persons'},
+    {code:'Clinic',name:'Clinic / Health Post',thresh:10000,siteAcEach:0.75,minCount:0,color:'#ff6666',
+     service:'3\u20135 km',note:'1 per 5,000\u201315,000 persons'},
+    {code:'Health Ctr',name:'Health Centre',thresh:15000,siteAcEach:1.5,minCount:0,color:'#ee4444',
+     service:'8\u201310 km',note:'1 per 10,000\u201320,000 persons'},
+    {code:'Polyclinic',name:'Polyclinic',thresh:35000,siteAcEach:4,minCount:0,color:'#cc0000',
+     service:'15\u201320 min drive',note:'1 per 20,000\u201350,000 persons (LUSPA: min 4 ac)'},
+    {code:'District Hosp',name:'District Hospital',thresh:100000,siteAcEach:10,minCount:0,color:'#880000',
+     service:'Within 1 hour',note:'1 per 50,000\u2013200,000 persons (LUSPA: min 10 ac)'}
+  ];
+  var totalLand=0;
+  var cards=thresholds.map(function(t){
+    var count=t.minCount;
+    if(pop>=t.thresh/2)count=Math.max(t.minCount,Math.ceil(pop/t.thresh));
+    var land=count*t.siteAcEach;
+    totalLand+=land;
+    var status=count>0?'Required':'Not Required';
+    var statusCls=count>0?'status-req':'status-no';
+    if(t.thresh===35000&&pop>=20000&&pop<35000){status='Optional';statusCls='status-opt';count=1;land=t.siteAcEach;}
+    return '<div class="fac-result-card" style="border-left-color:'+t.color+'">'
+      +'<div class="frc-count" style="color:'+t.color+'">'+count+'</div>'
+      +'<div class="frc-name">'+t.name+'</div>'
+      +'<div class="frc-site">'+t.siteAcEach+' ac each = '+land.toFixed(1)+' ac total</div>'
+      +'<span class="frc-status '+statusCls+'">'+status+'</span>'
+    +'</div>';
+  }).join('');
+
+  var pop_k=pop.toLocaleString();
+  var popDensity=ctx==='urban'?'Urban density assumed (higher facility demand)':'Rural density assumed (extended service radius)';
+
+  resEl.innerHTML='<div class="calc-hero"><h3>'+pop_k+'</h3><p>Population served &nbsp;|&nbsp; '+popDensity+'</p></div>'
+    +'<div class="fac-result-grid">'+cards+'</div>'
+    +'<div class="result-box">'
+    +'<div style="font-weight:700;font-size:13px;margin-bottom:10px;font-family:var(--font-head)">Health Infrastructure Summary</div>'
+    +'<table class="fac-tbl">'
+    +'<tr><th>Facility Type</th><th>No. Required</th><th>Min Site Each</th><th>Total Land</th><th>Service Coverage</th></tr>'
+    +thresholds.map(function(t){
+      var count=t.minCount;
+      if(pop>=t.thresh/2)count=Math.max(t.minCount,Math.ceil(pop/t.thresh));
+      var land=(count*t.siteAcEach).toFixed(1);
+      var status=count>0?'<span style="color:var(--green2);font-weight:700">'+count+'</span>':'<span style="color:var(--text3)">Not required</span>';
+      if(t.thresh===35000&&pop>=20000&&pop<35000){count=1;land=t.siteAcEach.toFixed(1);status='<span style="color:var(--gold-text);font-weight:700">1 (optional)</span>';}
+      return '<tr><td>'+t.name+'</td><td>'+status+'</td><td>'+t.siteAcEach+' ac</td><td>'+land+' ac</td><td>'+t.service+'</td></tr>';
+    }).join('')
+    +'<tr style="background:rgba(42,90,48,.07);font-weight:700"><td>TOTAL LAND REQUIREMENT</td><td colspan="2"></td><td>'+totalLand.toFixed(1)+' ac</td><td>All levels combined</td></tr>'
+    +'</table></div>'
+    +'<div class="step-note" style="margin-top:10px">&#9432; Thresholds per LUSPA Zoning Guidelines 2025. Actual facility requirements depend on existing facilities in the catchment area, access routes, population distribution and GHS service plans. Always confirm with the District Health Directorate during Local Plan preparation.</div>';
+}
+
+// ── EDUCATIONAL FACILITY CALCULATOR ──────────────────────────────
+function modalEduCalc(){
+  return '<div class="steps-intro">Enter the planning population to calculate the number of educational facilities required at each level, along with total land requirements, per LUSPA Zoning Guidelines and Planning Standards 2025.</div>'
+    +'<div class="form-grid" style="max-width:500px">'
+    +'<div class="fld"><label>Planning Population</label><input type="number" id="ecPop" value="25000" min="100" step="100" oninput="runEduCalc()"/></div>'
+    +'<div class="fld"><label>Gross Enrolment Ratio (GER)</label><select id="ecGer" onchange="runEduCalc()"><option value="0.25">25% school-age pop (typical Ghana)</option><option value="0.20">20% (rural)</option><option value="0.30">30% (urban)</option></select></div>'
+    +'</div>'
+    +'<div id="ecResults"></div>';
+}
+function runEduCalc(){
+  var popEl=document.getElementById('ecPop'),gerEl=document.getElementById('ecGer'),resEl=document.getElementById('ecResults');
+  if(!popEl||!resEl)return;
+  var pop=parseInt(popEl.value)||25000;
+  var ger=parseFloat(gerEl?gerEl.value:'0.25')||0.25;
+  var schoolAgePop=Math.round(pop*ger);
+
+  var levels=[
+    {code:'Nursery',name:'Nursery / Kindergarten',thresh:2000,siteAc:0.5,walkDist:'1.25 km',
+     catchPop:'1,000\u20135,000',classSize:'25\u201335',color:'#BBAA00',
+     note:'Min 0.5 ac / 2,500 m\u00b2 per LUSPA. 1 per 1,000\u20135,000 population.'},
+    {code:'Primary',name:'Primary School (Kinder\u2013P6)',thresh:3500,siteAc:3,walkDist:'2.5 km',
+     catchPop:'1,500\u20136,000',classSize:'35\u201340',color:'#998800',
+     note:'Min 3 ac / 12,140 m\u00b2 per LUSPA. Classroom: 9 \u00d7 7 m; 1 toilet per 30\u201340 pupils (segregated).'},
+    {code:'JHS',name:'Junior High School (JHS)',thresh:7500,siteAc:4,walkDist:'3.2 km',
+     catchPop:'5,000\u201310,000',classSize:'35\u201340',color:'#776600',
+     note:'Min 4 ac / 16,200 m\u00b2 per LUSPA. Max walking distance 3.2 km for catchment population.'},
+    {code:'SHS',name:'Senior High School (SHS)',thresh:15000,siteAc:6,walkDist:'4 km',
+     catchPop:'10,000\u201320,000',classSize:'40\u201350',color:'#554400',
+     note:'Min 6 ac / 24,281 m\u00b2 per LUSPA. Min open space 20% of site; sports field (1.7 ac football) required.'},
+    {code:'TVET',name:'TVET / Vocational School',thresh:20000,siteAc:6,walkDist:'4 km',
+     catchPop:'10,000\u201320,000',classSize:'20\u201330',color:'#332200',
+     note:'Min 6 ac per LUSPA. Same standards as SHS; workshop spaces required in addition to classrooms.'},
+    {code:'Tertiary',name:'Tertiary Institution',thresh:50000,siteAc:30,walkDist:'By transport',
+     catchPop:'50,000+',classSize:'100\u2013500 (lecture hall)',color:'#221100',
+     note:'Min 30 acres per LUSPA. Population 50,000+ required. Ed T zone designation. Full campus with residential, sports, commercial zones.'}
+  ];
+
+  var totalLand=0,totalCount=0;
+  var cards=levels.map(function(l){
+    var count=Math.max(0,Math.ceil(pop/l.thresh));
+    if(l.thresh===50000&&pop<50000)count=0;
+    var land=count*l.siteAc;
+    totalLand+=land;totalCount+=count;
+    return '<div class="fac-result-card edu-frc" style="border-left-color:var(--edu-border);background:var(--edu-fill)">'
+      +'<div class="frc-count" style="color:'+l.color+'">'+count+'</div>'
+      +'<div class="frc-name">'+l.name+'</div>'
+      +'<div class="frc-site">'+l.siteAc+' ac each = '+land.toFixed(0)+' ac total</div>'
+      +'<span class="frc-status '+(count>0?'status-req':'status-no')+'">'+(count>0?'Required':'Not required')+'</span>'
+    +'</div>';
+  }).join('');
+
+  var schoolPop=pop.toLocaleString(),saPop=schoolAgePop.toLocaleString();
+  resEl.innerHTML='<div class="calc-hero"><h3>'+schoolPop+'</h3><p>Total population &nbsp;|&nbsp; Est. school-age population: '+saPop+' ('+Math.round(ger*100)+'% GER)</p></div>'
+    +'<div class="fac-result-grid">'+cards+'</div>'
+    +'<div class="result-box">'
+    +'<div style="font-weight:700;font-size:13px;margin-bottom:10px;font-family:var(--font-head)">Educational Infrastructure Summary</div>'
+    +'<table class="fac-tbl">'
+    +'<tr><th>Level</th><th>No. Required</th><th>Min Site Each</th><th>Total Land</th><th>Catchment</th><th>Walk Distance</th></tr>'
+    +levels.map(function(l){
+      var count=Math.max(0,Math.ceil(pop/l.thresh));
+      if(l.thresh===50000&&pop<50000)count=0;
+      var land=(count*l.siteAc).toFixed(1);
+      var status=count>0?'<span style="color:var(--green2);font-weight:700">'+count+'</span>':'<span style="color:var(--text3)">Not required</span>';
+      return '<tr><td>'+l.name+'</td><td>'+status+'</td><td>'+l.siteAc+' ac</td><td>'+land+' ac</td><td>'+l.catchPop+'</td><td>'+l.walkDist+'</td></tr>';
+    }).join('')
+    +'<tr style="background:rgba(42,90,48,.07);font-weight:700"><td>TOTAL</td><td>'+totalCount+'</td><td></td><td>'+totalLand.toFixed(1)+' ac</td><td colspan="2">All levels combined</td></tr>'
+    +'</table></div>'
+    +'<div class="result-box" style="margin-top:10px">'
+    +'<div style="font-weight:700;font-size:13px;margin-bottom:8px;font-family:var(--font-head)">Classroom & Sanitation Standards</div>'
+    +'<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;font-size:12px">'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Classroom size:</strong> 9 \u00d7 7 m (63 m\u00b2)</div>'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Pupils per class:</strong> 35\u201340 (primary)</div>'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Toilets:</strong> 1 per 30\u201340 pupils (gender-segregated)</div>'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Parking:</strong> Min 5 spaces per school</div>'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Setback (SHS/TVET):</strong> Min 10 m all sides</div>'
+    +'<div style="padding:8px;background:var(--bg3);border-radius:4px"><strong>Open space (SHS):</strong> Min 20% of site</div>'
+    +'</div></div>'
+    +'<div class="step-note" style="margin-top:10px">&#9432; Per LUSPA Zoning Guidelines 2025. Actual facility numbers depend on existing provision in the catchment area and GES planning. Always confirm with the District Education Office during Local Plan preparation. GER = Gross Enrolment Ratio.</div>';
+}
+
+// ── BUFFER & SEPARATION STANDARDS MATRIX ─────────────────────────
+var bufMatrixData=[
+  {cat:'Industrial Zones',rows:[
+    {facility:'Extractive Industry / Mining (EI)',from:'Nearest settlement or habitation',dist:'Min 500 m',type:'critical',src:'LUSPA Zoning Guidelines 2025'},
+    {facility:'Extractive Industry / Mining (EI)',from:'Staff housing within extraction zone',dist:'Beyond blasting zone only',type:'critical',src:'LUSPA 2025'},
+    {facility:'Heavy Industrial Zone (HI)',from:'Residential areas (general)',dist:'Per EIA (mandatory)',type:'critical',src:'EIA Required before planning permit'},
+    {facility:'Heavy Industrial Zone (HI)',from:'Schools & health facilities',dist:'Min 1 km recommended',type:'warn',src:'LUSPA 2025 / EPA'},
+    {facility:'Heavy Industrial Zone (HI)',from:'Water bodies',dist:'Riparian buffer + EIA',type:'warn',src:'See Buffer Calculator'},
+    {facility:'Light Industrial Zone (LI)',from:'Residential buildings (front setback)',dist:'6 m (front plot boundary)',type:'ok',src:'LUSPA 2025'},
+    {facility:'Light Industrial Zone (LI)',from:'Residential buildings (side/rear)',dist:'3 m minimum',type:'ok',src:'LUSPA 2025'},
+    {facility:'Light Industrial Zone (LI)',from:'Schools & health facilities',dist:'Min 500 m recommended',type:'warn',src:'Best practice / EPA'},
+    {facility:'Service Industrial Zone (SI)',from:'Front plot boundary',dist:'6 m minimum',type:'ok',src:'LUSPA 2025'},
+    {facility:'Service Industrial Zone (SI)',from:'Side & rear boundaries',dist:'3 m minimum',type:'ok',src:'LUSPA 2025'},
+  ]},
+  {cat:'Fuel & Gas Facilities',rows:[
+    {facility:'Fuel / Petrol Station',from:'Adjacent station (same side of road)',dist:'Min 300 m',type:'critical',src:'LUSPA Zoning Guidelines 2025'},
+    {facility:'Fuel / Petrol Station',from:'Adjacent station (staggered / opposite)',dist:'Min 300 m',type:'critical',src:'LUSPA 2025'},
+    {facility:'Fuel / Petrol Station',from:'School, hospital, public institution',dist:'Min 60 m',type:'critical',src:'LUSPA 2025 / Fire Safety'},
+    {facility:'Fuel / Petrol Station',from:'Road bend or junction',dist:'Min 60 m (sight distance)',type:'warn',src:'LUSPA 2025'},
+    {facility:'Fuel / Petrol Station',from:'Watercourse or wetland',dist:'Min 30 m',type:'warn',src:'LUSPA 2025'},
+    {facility:'Fuel / Petrol Station',from:'Environmentally sensitive area',dist:'Min 30 m',type:'warn',src:'EPA / LUSPA 2025'},
+    {facility:'LPG Plant',from:'Fuel station (same side)',dist:'Min 500 m',type:'critical',src:'LUSPA 2025'},
+    {facility:'LPG Plant',from:'Fuel station (staggered / opposite)',dist:'Min 500 m',type:'critical',src:'LUSPA 2025'},
+    {facility:'LPG Plant',from:'Public institution',dist:'Min 500 m',type:'critical',src:'LUSPA 2025'},
+    {facility:'Maximum station density',from:'Any 1 km road stretch',dist:'Max 3 stations',type:'warn',src:'LUSPA 2025'},
+  ]},
+  {cat:'Cemeteries & Funeral Facilities',rows:[
+    {facility:'Funeral Parlour',from:'Nearest residential dwelling',dist:'Min 300 m radius',type:'critical',src:'LUSPA Zoning Guidelines 2025'},
+    {facility:'Crematorium',from:'Nearest residential dwelling',dist:'Min 300 m radius',type:'critical',src:'LUSPA 2025'},
+    {facility:'Funeral Parlour',from:'Major pipelines / water sources',dist:'Avoid proximity (site criterion)',type:'warn',src:'LUSPA 2025'},
+    {facility:'Funeral Parlour',from:'Max bodies stored',dist:'10 bodies maximum',type:'ok',src:'LUSPA 2025 (operational limit)'},
+    {facility:'Crematorium',from:'Min parking required',dist:'Min 25 vehicle spaces',type:'ok',src:'LUSPA 2025'},
+    {facility:'Cemetery (pop \u2264 5,000)',from:'Site size standard',dist:'1.24 \u2013 2.5 acres',type:'ok',src:'LUSPA 2025'},
+    {facility:'Cemetery (pop 5,000\u201315,000)',from:'Site size standard',dist:'2.5 \u2013 3.7 acres',type:'ok',src:'LUSPA 2025'},
+    {facility:'Cemetery (pop 15,000\u2013100,000)',from:'Site size standard',dist:'25 acres',type:'ok',src:'LUSPA 2025'},
+    {facility:'Cemetery (any size)',from:'Groundwater requirement',dist:'Low water table (site criterion)',type:'warn',src:'LUSPA 2025'},
+  ]},
+  {cat:'Waste Management Facilities',rows:[
+    {facility:'Sewage Treatment Plant',from:'Populated areas / residential',dist:'Min 500 m',type:'critical',src:'LUSPA Zoning Guidelines 2025'},
+    {facility:'Water Treatment Plant',from:'Any buildings',dist:'Min 1 km',type:'critical',src:'LUSPA 2025'},
+    {facility:'Final Waste Disposal / Landfill',from:'Nearest town centre',dist:'10 \u2013 30 km',type:'critical',src:'LUSPA 2025'},
+    {facility:'Landfill',from:'Minimum site size',dist:'Min 10 acres',type:'warn',src:'LUSPA 2025'},
+    {facility:'Refuse Collection Point',from:'Population served',dist:'Up to 10,000 persons per point',type:'ok',src:'LUSPA 2025'},
+    {facility:'Refuse Collection Point',from:'Minimum site size',dist:'Min 2 acres',type:'ok',src:'LUSPA 2025'},
+    {facility:'Household refuse bin (low density)',from:'Max distance from dwelling',dist:'Max 360 m (10\u201312 m\u00b3 bin)',type:'ok',src:'LUSPA 2025'},
+    {facility:'Household refuse bin (medium density)',from:'Max distance from dwelling',dist:'Max 270 m (14 m\u00b3 bin)',type:'ok',src:'LUSPA 2025'},
+    {facility:'Household refuse bin (high density)',from:'Max distance from dwelling',dist:'Max 150 m',type:'ok',src:'LUSPA 2025'},
+    {facility:'Public Toilet',from:'Water body (stream / drain)',dist:'Min 30 m',type:'warn',src:'LUSPA 2025'},
+    {facility:'Public Toilet',from:'Road frontage setback',dist:'Min 3 m',type:'ok',src:'LUSPA 2025'},
+  ]},
+  {cat:'Power & Telecommunications',rows:[
+    {facility:'High Tension (HT) Power Line',from:'Any structure (each side of pylon)',dist:'50 m each side (100 m total wayleave)',type:'critical',src:'LUSPA 2025 \u2014 NO structures in wayleave'},
+    {facility:'Electricity Transformer (residential < 15k)',from:'Any building',dist:'Min 8 m (26 ft)',type:'critical',src:'LUSPA 2025'},
+    {facility:'Electricity Transformer (residential < 15k)',from:'Max site area',dist:'250 m\u00b2 maximum',type:'ok',src:'LUSPA 2025'},
+    {facility:'Electricity Transformer (commercial / light industrial)',from:'Any building',dist:'Min 8 m (26 ft)',type:'critical',src:'LUSPA 2025'},
+    {facility:'Electricity Transformer (commercial / light industrial)',from:'Max site area',dist:'225 m\u00b2 maximum',type:'ok',src:'LUSPA 2025'},
+    {facility:'Overhead Power Line',from:'Street level (head clearance)',dist:'Min 5 m',type:'critical',src:'LUSPA 2025 (safety)'},
+    {facility:'Overhead Power Line Pole',from:'Road edge',dist:'Min 2 m',type:'warn',src:'LUSPA 2025'},
+    {facility:'Street Light Post',from:'Road edge (lateral)',dist:'Min 0.5 m',type:'ok',src:'LUSPA 2025'},
+    {facility:'Street Light Spacing (urban)',from:'Between light posts',dist:'38 \u2013 45 m intervals',type:'ok',src:'LUSPA 2025'},
+    {facility:'Street Light Spacing (highway)',from:'Between light posts',dist:'50 \u2013 55 m intervals',type:'ok',src:'LUSPA 2025'},
+    {facility:'GSM / Telecom Tower (residential)',from:'Nearest building',dist:'Min 12 m; tower height 35\u201340 m',type:'warn',src:'LUSPA 2025'},
+  ]},
+  {cat:'Riparian & Water Body Buffers',rows:[
+    {facility:'Municipal Reservoir / Dam shoreline',from:'Any development',dist:'60 \u2013 90 m buffer',type:'critical',src:'LUSPA 2025 (riparian standards)'},
+    {facility:'Major perennial river (e.g. Volta, Tano, Pra)',from:'Any development',dist:'10 \u2013 60 m buffer',type:'critical',src:'LUSPA 2025'},
+    {facility:'Minor perennial stream',from:'Any development',dist:'10 \u2013 15 m buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Important intermittent stream',from:'Any development',dist:'10 \u2013 20 m buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Stream within forest reserve',from:'Any development',dist:'10 \u2013 50 m buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Wetland (perimeter)',from:'Any development',dist:'30 m perimeter buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Site slope 15\u201320%',from:'Buffer adjustment',dist:'+3 m added to applicable buffer',type:'ok',src:'LUSPA 2025'},
+    {facility:'Site slope 20\u201325%',from:'Buffer adjustment',dist:'+10 m added to applicable buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Site slope 25\u201330%',from:'Buffer adjustment',dist:'+20 m added to applicable buffer',type:'warn',src:'LUSPA 2025'},
+    {facility:'Hazardous substance / petroleum storage nearby',from:'Buffer adjustment',dist:'+30 m added to applicable buffer',type:'critical',src:'LUSPA 2025'},
+    {facility:'Solid waste landfill nearby',from:'Buffer adjustment',dist:'+20 m added to applicable buffer',type:'warn',src:'LUSPA 2025'},
+  ]},
+  {cat:'Health & Education Facility Buffers',rows:[
+    {facility:'Polyclinic (H Po zone)',from:'Pollution sources',dist:'Min 500 m (LUSPA mandatory)',type:'critical',src:'LUSPA 2025'},
+    {facility:'Polyclinic (H Po zone)',from:'Industrial zones',dist:'Min 500 m',type:'critical',src:'LUSPA 2025'},
+    {facility:'District Hospital (H D zone)',from:'Pollution / industrial',dist:'Min 1 km recommended',type:'warn',src:'GHS / EPA best practice'},
+    {facility:'All health facilities',from:'Water body',dist:'Min 30 m',type:'warn',src:'LUSPA 2025'},
+    {facility:'SHS / TVET Schools',from:'All plot boundaries (setback)',dist:'Min 10 m all sides',type:'warn',src:'LUSPA 2025'},
+    {facility:'Primary & JHS Schools',from:'Noisy / polluting uses',dist:'Min 200 m recommended',type:'warn',src:'GES / EPA best practice'},
+  ]}
+];
+
+var bufActiveFilter='all';
+function modalBufferMatrix(){
+  var cats=['all'].concat(bufMatrixData.map(function(g){return g.cat;}));
+  var filters=cats.map(function(c){
+    return '<button class="buf-filter-btn'+(c==='all'?' on':'')+'" onclick="renderBufMatrix(\''+c+'\',this)">'+c+'</button>';
+  }).join('');
+  return '<div class="steps-intro">All LUSPA mandatory and recommended separation / buffer distances consolidated in one searchable table. Red = mandatory LUSPA standard. Orange = recommended / EPA best practice. Green = informational standard. Click category filters to narrow results.</div>'
+    +'<div class="buf-filter-row" id="bufFilterRow">'+filters+'</div>'
+    +'<div style="overflow-x:auto"><table class="buf-matrix" id="bufTableEl">'
+    +'<tr><th>Facility / Source</th><th>Measured from</th><th>Required Distance / Standard</th><th>Type</th><th>Source</th></tr>'
+    +'</table></div>'
+    +'<div class="step-note" style="margin-top:10px">&#9432; Source: LUSPA Revised Zoning Guidelines & Planning Standards 2025. Critical (red) standards are LUSPA mandatory minimums. Recommended (orange) standards are EPA or best-practice guidance. Always verify with the district Physical Planning Department before siting sensitive facilities.</div>';
+}
+function renderBufMatrix(cat,btn){
+  bufActiveFilter=cat;
+  document.querySelectorAll('.buf-filter-btn').forEach(function(b){b.classList.remove('on');});
+  if(btn)btn.classList.add('on');
+  var tbl=document.getElementById('bufTableEl');if(!tbl)return;
+  var data=cat==='all'?bufMatrixData:bufMatrixData.filter(function(g){return g.cat===cat;});
+  var rows='<tr><th>Facility / Source</th><th>Measured from</th><th>Required Distance / Standard</th><th>Type</th><th>Source</th></tr>';
+  data.forEach(function(g){
+    rows+='<tr class="buf-cat-hdr"><td colspan="5">'+g.cat+'</td></tr>';
+    g.rows.forEach(function(r){
+      var cls=r.type==='critical'?'buf-crit':r.type==='warn'?'buf-warn':'buf-ok';
+      var typeLbl=r.type==='critical'?'&#9888; Mandatory':r.type==='warn'?'&#9660; Recommended':'&#8627; Standard';
+      rows+='<tr><td><strong>'+r.facility+'</strong></td><td>'+r.from+'</td>'
+        +'<td class="'+cls+'">'+r.dist+'</td><td class="'+cls+'" style="white-space:nowrap;font-size:10px">'+typeLbl+'</td>'
+        +'<td style="font-size:10px;color:var(--text3)">'+r.src+'</td></tr>';
+    });
+  });
+  tbl.innerHTML=rows;
+}
+
+// ── GHANA PLANNING KNOWLEDGE BASE ─────────────────────────────────
+var kbEntries=[];
+function buildKBIndex(){
+  if(kbEntries.length>0)return;
+  // Zones
+  zones.forEach(function(z){
+    var text=(z.code+' '+z.name+' '+z.cat+' '+Object.values(z.std).join(' ')+' '+z.permit.join(' ')+' '+z.prohibit.join(' ')).toLowerCase();
+    kbEntries.push({type:'zone',icon:'&#127968;',title:z.code+' \u2014 '+z.name,
+      text:'Zone: '+z.cat+' | Context: '+z.ctx.join('/')+' | '+Object.entries(z.std).slice(0,3).map(function(e){return e[0]+': '+e[1];}).join(' | '),
+      search:text,action:function(code){return function(){closeModal();setCat(zones.find(function(zz){return zz.code===code;}).cat);setTimeout(function(){scrollToZone(code);},200);};}(z.code)});
+  });
+  // Health facilities
+  healthFacData.forEach(function(h){
+    var text=(h.code+' '+h.name+' '+h.full+' '+h.level+' '+Object.values(h.stats).join(' ')+' '+h.features.join(' ')+' '+h.note).toLowerCase();
+    kbEntries.push({type:'health',icon:'&#9877;&#65039;',title:h.name+' ('+h.level+')',
+      text:'Catchment: '+h.stats['Catchment Population']+(h.stats['LUSPA Min Site Area']?' | Site: '+h.stats['LUSPA Min Site Area']:h.stats['Site Area']?' | Site: '+h.stats['Site Area']:'')+(h.stats['Inpatient Beds']?' | Beds: '+h.stats['Inpatient Beds']:''),
+      search:text,action:function(){openModal('healthModule');}});
+  });
+  // Buffer standards
+  bufMatrixData.forEach(function(g){
+    g.rows.forEach(function(r){
+      var text=(g.cat+' '+r.facility+' '+r.from+' '+r.dist+' '+r.src).toLowerCase();
+      kbEntries.push({type:'buffer',icon:'&#9888;&#65039;',title:r.facility,
+        text:'From: '+r.from+' \u2014 Required: '+r.dist+' \u2014 Type: '+(r.type==='critical'?'MANDATORY':'Recommended'),
+        search:text,action:function(c){return function(){openModal('bufferMatrix');setTimeout(function(){renderBufMatrix(c);var btns=document.querySelectorAll('.buf-filter-btn');btns.forEach(function(b){if(b.textContent===c)b.click();});},200);};}(g.cat)});
+    });
+  });
+  // Ed standards
+  [{name:'Nursery / KG',pop:'1,000\u20135,000',site:'0.5 ac',walk:'1.25 km',search:'nursery kindergarten early childhood education primary'},
+   {name:'Primary School',pop:'1,500\u20136,000',site:'3 ac',walk:'2.5 km',search:'primary school basic education p6'},
+   {name:'Junior High School (JHS)',pop:'5,000\u201310,000',site:'4 ac',walk:'3.2 km',search:'junior high school jhs middle school'},
+   {name:'Senior High School (SHS)',pop:'10,000\u201320,000',site:'6 ac',walk:'4 km',search:'senior high school shs secondary'},
+   {name:'TVET / Vocational School',pop:'10,000\u201320,000',site:'6 ac',walk:'4 km',search:'tvet vocational technical training'},
+   {name:'Tertiary Institution',pop:'50,000+',site:'30 ac min',walk:'By transport',search:'university polytechnic college tertiary higher education'}
+  ].forEach(function(e){
+    kbEntries.push({type:'education',icon:'<span style="color:var(--edu-border)">&#127979;</span>',title:e.name,
+      text:'Catchment: '+e.pop+' | Min site: '+e.site+' | Walk: '+e.walk,
+      search:(e.name+' '+e.search+' education school facility luspa standard').toLowerCase(),
+      action:function(){openModal('eduCalc');}});
+  });
+  // Planning manual key terms
+  [{term:'Local Plan',desc:'5-year lifespan; \u00b10.3 m accuracy; legally binding; assigns UPNs; prepared by District Assembly (sole responsibility)',modal:'lp'},
+   {term:'Structure Plan',desc:'15-year lifespan; \u00b110 m accuracy; legally binding zones; prepared by TSC/SPC \u2192 District Assembly',modal:'sp'},
+   {term:'Spatial Development Framework (SDF)',desc:'20-year lifespan; indicative/strategic; prepared by LUSPA (National), RCC (Regional) or DA (District)',modal:'sdf'},
+   {term:'Stakeholder Consultation',desc:'Minimum 3 mandatory workshops: Inception, Validation, Preferred Scenario. Full report required for each.',modal:'consult'},
+   {term:'TSC Composition',desc:'Technical Sub-Committee led by Head of Physical Planning Department; 11 members including EPA, Lands Commission, NADMO, Fire Officer',modal:'tsc'},
+   {term:'Approval Authorities',desc:'National SDF: President | Regional SDF: RCC | District SDF/SP: General Assembly | Local Plan: SPC',modal:'approval'},
+   {term:'Chain of Conformity',desc:'LP \u2192 SP \u2192 District SDF \u2192 Regional SDF \u2192 National SDF. Each plan must conform to the plan above it.',modal:'legalref'},
+   {term:'SEA (Strategic Environmental Assessment)',desc:'Required for all spatial plans; commence at start of plan preparation; follow EPA guidelines under Act 1124',modal:'lp'}
+  ].forEach(function(e){
+    kbEntries.push({type:'planning',icon:'&#128205;',title:e.term,text:e.desc,
+      search:(e.term+' '+e.desc).toLowerCase(),action:function(m){return function(){openModal(m);};}(e.modal)});
+  });
+  // Legal refs
+  [{act:'Act 925',name:'Land Use & Spatial Planning Act 2016',desc:'Primary legislation; establishes LUSPA and three-tier planning system'},
+   {act:'L.I. 2384',name:'Land Use & Spatial Planning Regulations 2019',desc:'Operational regulations under Act 925'},
+   {act:'Act 936',name:'Local Governance Act 2016',desc:'Governs MMDAs; establishes SPC and TSC structures'},
+   {act:'Act 1124',name:'Environmental Protection Act 2025',desc:'Governs SEA; all plans require EPA compliance'},
+   {act:'Act 1036',name:'Lands Act 2020',desc:'Land ownership, customary land rights, Lands Commission, UPN assignment'},
+   {act:'GBC 2018',name:'Ghana Building Code 2018',desc:'Building construction standards complementing LUSPA at plot level'}
+  ].forEach(function(e){
+    kbEntries.push({type:'legal',icon:'&#9878;&#65039;',title:e.act+' \u2014 '+e.name,text:e.desc,
+      search:(e.act+' '+e.name+' '+e.desc).toLowerCase(),action:function(){openModal('legalref');}});
+  });
+}
+
+function modalKnowledgeBase(){
+  return '<div class="kb-hint">Search across all LUSPA zone standards, health & education facility requirements, buffer distances, planning manual procedures and legal references. All content from LUSPA Zoning Guidelines 2025 and Manual for Preparation of Spatial Plans 2025.</div>'
+    +'<div class="kb-search-wrap"><span class="kb-icon">&#128270;</span>'
+    +'<input type="text" id="kbSearch" class="kb-search" placeholder="Type anything: &ldquo;health centre&rdquo;, &ldquo;fuel station&rdquo;, &ldquo;setback&rdquo;, &ldquo;Act 925&rdquo;\u2026" oninput="runKB()"/>'
+    +'</div>'
+    +'<div id="kbResults"><div class="kb-empty">&#128270;<br><br>Start typing to search across all planning content.</div></div>';
+}
+
+function runKB(){
+  buildKBIndex();
+  var q=(document.getElementById('kbSearch').value||'').toLowerCase().trim();
+  var el=document.getElementById('kbResults');
+  if(!el)return;
+  if(q.length<2){el.innerHTML='<div class="kb-empty">&#128270;<br><br>Type at least 2 characters to search.</div>';return;}
+  // Score all entries
+  var words=q.split(/\s+/).filter(function(w){return w.length>1;});
+  var scored=kbEntries.map(function(e){
+    var score=0;
+    words.forEach(function(w){if(e.search.indexOf(w)>-1)score+=(e.title.toLowerCase().indexOf(w)>-1?3:1);});
+    return {entry:e,score:score};
+  }).filter(function(s){return s.score>0;}).sort(function(a,b){return b.score-a.score;}).slice(0,40);
+  if(!scored.length){el.innerHTML='<div class="kb-empty">No results for &ldquo;'+q+'&rdquo;.<br><br>Try: &ldquo;health centre&rdquo;, &ldquo;Re A&rdquo;, &ldquo;setback&rdquo;, &ldquo;buffer&rdquo;, &ldquo;Act 925&rdquo;</div>';return;}
+  // Group by type
+  var typeOrder=['zone','health','education','buffer','planning','legal'];
+  var typeLabels={zone:'Zone Standards &#127968;',health:'Health Facilities &#9877;&#65039;',
+    education:'<span style="color:var(--edu-border)">&#127979;</span> Education Facilities',buffer:'Buffer & Separation Standards &#9888;&#65039;',
+    planning:'Planning Manual &#128205;',legal:'Legal References &#9878;&#65039;'};
+  var groups={};
+  scored.forEach(function(s){
+    var t=s.entry.type;
+    if(!groups[t])groups[t]=[];
+    if(groups[t].length<6)groups[t].push(s.entry);
+  });
+  var html='';
+  typeOrder.forEach(function(t){
+    if(!groups[t]||!groups[t].length)return;
+    var items=groups[t].map(function(e){
+      return '<div class="kb-item" onclick="('+e.action.toString()+')();this.style.background=\'var(--green-light)\'">'
+        +'<div class="kb-item-title">'+e.icon+' '+e.title+'</div>'
+        +'<div class="kb-item-text">'+e.text+'</div>'
+      +'</div>';
+    }).join('');
+    var isEduType=(t==='education');
+    html+='<div class="kb-group"><div class="kb-group-hdr" style="'+(isEduType?'background:var(--edu-border)':'')+'">'+(isEduType?'<span style="font-size:13px">&#127979;</span> ':'')+(isEduType?'Education Facilities':typeLabels[t])+' ('+groups[t].length+' results)</div>'+items+'</div>';
+  });
+  el.innerHTML='<div class="kb-results">'+html+'</div>'
+    +'<div style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">Showing top '+scored.length+' results across all planning content</div>';
+}
+
+
 // ── INIT ─────────────────────────────────────────────────────────
 loadState();
 setView(S.view);
@@ -2940,7 +3610,6 @@ if(document.body.classList.contains('dk'))document.getElementById('darkBtn').tex
 initSidebar();
 render();
 renderMisc();
-checkDashboard();
 
 </script>
 
@@ -3022,6 +3691,10 @@ checkDashboard();
     </button>
     <div class="dash-skip"><a onclick="closeDashboard()">Skip — open full reference tool</a></div>
   </div>
+</div>
+
+
+  
 </div>
 
 <!-- FEEDBACK FLOATING BUTTON -->
