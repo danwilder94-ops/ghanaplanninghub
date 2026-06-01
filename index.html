@@ -330,6 +330,23 @@ footer{display:none}
 
 
 
+/* ── EDUCATION ZONES — Ghana Planning Convention (Yellow fill / Red outline) ── */
+/* Zone badge: yellow fill, bold red ring (increased visibility) */
+.zbadge[data-edu="1"]{
+  background:#FFF176 !important;
+  color:#7A0000 !important;
+  border:3px solid #CC0000 !important;
+  outline:2px solid #FF0000 !important;
+  outline-offset:1px;
+  font-weight:800;
+  box-shadow:0 0 0 1px #CC0000,0 2px 6px rgba(204,0,0,.25) !important}
+/* List-view education zone row */
+.zone-list-row[data-code^="Ed"]{
+  border-left:6px solid #CC0000;
+  background:rgba(255,241,118,.18)}
+.zone-list-row[data-code^="Ed"]:hover{
+  background:rgba(255,241,118,.35);
+  border-left-color:#FF0000}
 /* PRINT */
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -495,35 +512,121 @@ footer{display:none}
 .kb-hint{font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.6;padding:8px 12px;
   background:var(--bg3);border-radius:var(--radius-sm);border:1px solid var(--border)}
 
-/* ── GHANA PLANNING EDUCATION COLOUR CONVENTION ──────────────────
-   Educational uses: Yellow fill (#FFFDE0) + Red outline (#CC0000)
-   Per conventional Ghanaian planning scheme colour standards
-   reflected in LUSPA planning maps ─────────────────────────────── */
-:root{
-  --edu-fill:#FFFDE0;
-  --edu-fill-mid:#FFF8C8;
-  --edu-fill-deep:#FFF0A0;
-  --edu-border:#CC0000;
-  --edu-text:#8B0000;
-  --edu-badge-bg:#FFFF99;
-}
-.edu-zone-card{border-left-color:var(--edu-border)!important}
-.edu-zone-card .card-hdr{background:var(--edu-fill)!important}
-.edu-zone-card .zbadge{background:var(--edu-badge-bg)!important;color:var(--edu-text)!important;
-  border-color:var(--edu-border)!important;border-width:1.5px!important}
-.edu-zone-card:hover{box-shadow:0 4px 20px rgba(204,0,0,.18)!important}
-/* Education facility calculator cards */
-.edu-frc{border-left-color:var(--edu-border)!important}
-.edu-frc .frc-count{color:var(--edu-border)!important}
-/* Education knowledge-base results */
-.kb-group.edu-kb .kb-group-hdr{background:var(--edu-border)!important}
-.kb-item.edu-kb-item{border-left:3px solid var(--edu-border)}
-.kb-item.edu-kb-item:hover{background:var(--edu-fill)!important}
-/* Education legend swatch border */
-.leg-edu-swatch{outline:2px solid var(--edu-border)!important;outline-offset:1px}
-/* Education section header accent */
-.edu-section-hdr{border-left:4px solid var(--edu-border);padding-left:10px;
-  background:linear-gradient(90deg,var(--edu-fill),transparent)}
+
+/* ── EDUCATION ZONE — Ghana Planning Colour Convention ─────────── */
+/* Yellow fill (#FFFB87) + Red outline (#CC0000) — LUSPA standard   */
+.zone-card[data-code^="Ed"]{
+  background:#FFFB87 !important;
+  border:3px solid #CC0000 !important;
+  box-shadow:0 0 0 1px #CC000030, 0 2px 8px rgba(204,0,0,.15) !important}
+.zone-card[data-code^="Ed"]:hover{
+  background:#FFF500 !important;
+  border-color:#AA0000 !important;
+  box-shadow:0 0 0 2px #CC000040, 0 4px 16px rgba(204,0,0,.25) !important;
+  transform:translateY(-2px)}
+.zone-card[data-code^="Ed"] .zone-code-badge{
+  background:#CC0000 !important;
+  color:#fff !important;
+  border-color:#CC0000 !important}
+.zone-card[data-code^="Ed"] .zone-name{color:#7a0000 !important}
+.zone-card[data-code^="Ed"] .zone-desc{color:#8A1010 !important}
+.zone-card[data-code^="Ed"]{
+  border:3px solid #CC0000 !important;
+  background:linear-gradient(160deg,#FFF9C4 0%,#FFFDE0 100%) !important;
+  box-shadow:0 2px 12px rgba(204,0,0,.18) !important}
+.zone-card[data-code^="Ed"]:hover{
+  border-color:#FF0000 !important;
+  background:linear-gradient(160deg,#FFFF00 0%,#FFF9C4 100%) !important;
+  box-shadow:0 6px 20px rgba(204,0,0,.3) !important;
+  transform:translateY(-2px)}
+/* Education zone badge — all contexts: yellow fill + red ring */
+.zbadge[style*="Ed"]{
+  outline:3px solid #CC0000 !important;
+  outline-offset:1px;
+  box-shadow:0 0 0 1px #FF0000}
+
+/* ── Education section header in Community Calc ── */
+.edu-section-hdr{
+  background:linear-gradient(135deg,#FFF176 0%,#FFFF00 100%);
+  border-left:6px solid #CC0000;
+  border-top:2px solid #CC0000;
+  border-bottom:2px solid #CC0000;
+  border-right:2px solid #CC0000;
+  color:#7A0000;
+  padding:10px 14px;
+  border-radius:4px;
+  font-weight:800;
+  font-size:12px;
+  font-family:var(--font-head);
+  margin-bottom:10px;
+  letter-spacing:.3px;
+  box-shadow:inset 0 0 0 1px rgba(204,0,0,.2)}
+
+/* ── Education facility result cards (eduCalc output) ── */
+.fac-result-card{
+  border:2px solid #CC0000 !important;
+  border-left:6px solid #CC0000 !important;
+  background:linear-gradient(135deg,#FFF176 0%,#FFFDE0 100%) !important;
+  box-shadow:0 2px 8px rgba(204,0,0,.15) !important}
+.fac-result-card:hover{
+  border-color:#FF0000 !important;
+  background:linear-gradient(135deg,#FFFF00 0%,#FFF9C4 100%) !important;
+  box-shadow:0 4px 16px rgba(204,0,0,.25) !important}
+.frc-count{
+  color:#CC0000 !important;
+  font-size:28px !important;
+  font-weight:800 !important}
+.frc-name{
+  color:#7A0000 !important;
+  font-weight:700;
+  font-size:13px}
+.frc-standard{color:#8A2000 !important;font-size:10px}
+
+/* ── Education rows in comparison/data tables ── */
+tr.edu-row td{
+  background:rgba(255,241,118,.2);
+  border-left:4px solid #CC0000;
+  border-top:1px solid rgba(204,0,0,.2);
+  border-bottom:1px solid rgba(204,0,0,.2)}
+tr.edu-row:hover td{background:rgba(255,241,118,.4)}
+
+/* ── GIS Export preview swatch for education zones ── */
+.gis-edu-swatch{
+  width:28px;height:18px;
+  background:#FFF176;
+  border:3px solid #CC0000;
+  border-radius:3px;
+  display:inline-block;
+  box-shadow:0 0 0 1px #FF000060}
+
+/* ── Zone card: education-specific styling ── */
+.zone-card[data-cat="education"]{
+  border:3px solid #CC0000 !important;
+  background:linear-gradient(160deg,#FFF9C4 0%,#FFFDE0 100%) !important;
+  box-shadow:0 2px 12px rgba(204,0,0,.18) !important}
+.zone-card[data-cat="education"]:hover{
+  border-color:#FF0000 !important;
+  background:linear-gradient(160deg,#FFFF00 0%,#FFF9C4 100%) !important;
+  box-shadow:0 6px 20px rgba(204,0,0,.3) !important;
+  transform:translateY(-2px)}
+.zone-card[data-cat="education"] .zone-name{color:#7A0000 !important}
+.zone-card[data-cat="education"] .zone-code-badge{
+  background:#FFF176 !important;
+  color:#7A0000 !important;
+  border:2px solid #CC0000 !important;
+  font-weight:800 !important}
+.zone-card[data-cat="education"] .zone-desc{color:#8A1010 !important}
+
+/* ── Education zone search result highlight ── */
+.zone-card[data-cat="education"].search-match{
+  border-color:#FF0000 !important;
+  box-shadow:0 0 0 3px rgba(255,0,0,.25),0 4px 16px rgba(204,0,0,.2) !important}
+
+/* ── Education badge in planning legend ── */
+.leg-swatch[data-edu]{
+  background:#FFF176;
+  border:3px solid #CC0000;
+  box-shadow:0 0 0 1px #FF000060}
 
 </style>
 </head>
@@ -547,10 +650,6 @@ footer{display:none}
       <button class="cpill" onclick="setCtx('urban',this)">Built-up</button>
       <button class="cpill" onclick="setCtx('greenfield',this)">Greenfield</button>
       <button class="cpill" onclick="setCtx('rural',this)">Rural</button>
-    </div>
-    <div id="userPill" onclick="toggleUserMenu()" title="Account">
-      <div class="user-avatar" id="userAvatar">?</div>
-      <div><div class="user-name" id="userName">User</div><span class="user-role-tag" id="userRoleTag"></span></div>
     </div>
     <button class="hdr-btn" onclick="openDashboard()" title="Planning Dashboard" style="display:flex;align-items:center;gap:5px;font-weight:600">&#127968; Dashboard</button>
     <button class="hdr-btn" onclick="openModal('shortcuts')" title="Keyboard shortcuts">&#9109;</button>
@@ -713,19 +812,19 @@ var zones=[
  prohibit:['Mass displacement infrastructure','Cemeteries/Crematoriums','Large industrial','Gas Filling Stations']},
 
 {cat:'education',code:'Ed P',name:'Pre-Schools & Basic Schools',ctx:['greenfield','urban'],
- lc:'#CC0000',bg:'#FFFDE0',density:0,
+ lc:'#CC0000',bg:'#FFF176',density:0,
  std:{'Nursery/KG site':'Min 0.5\u00a0ac\u00a0/\u00a02,500\u00a0m\u00b2','Primary school site':'Min 3\u00a0ac\u00a0/\u00a012,140\u00a0m\u00b2','JHS site':'Min 4\u00a0ac\u00a0/\u00a016,200\u00a0m\u00b2','Nursery catchment':'1,000\u20135,000 pop; 1.25\u00a0km','Primary catchment':'1,500\u20136,000 pop; max 2.5\u00a0km','JHS catchment':'5,000\u201310,000 pop; max 3.2\u00a0km','Classroom':'9\u00a0\u00d7\u00a07\u00a0m (35\u201340 pupils)','Toilets':'1 per 30\u201340 pupils (segregated)','Parking':'Min 5 spaces'},
  permit:['Classrooms, Offices, Labs','Teachers Accommodation','Libraries, Workshops','Playgrounds, Canteen'],
  prohibit:['Transport/Warehouses','Animal Husbandry','Slaughterhouses','Industries','Crematorium/Cemeteries']},
 
 {cat:'education',code:'Ed S',name:'Senior High / TVET Schools',ctx:['greenfield','urban'],
- lc:'#CC0000',bg:'#FFF8C8',density:0,
+ lc:'#CC0000',bg:'#FFF176',density:0,
  std:{'Min site area':'6\u00a0ac\u00a0/\u00a024,281\u00a0m\u00b2','Catchment':'10,000\u201320,000 pop','Max commute':'4\u00a0km','Setback (all sides)':'Min 10\u00a0m','Dormitory':'Min 4\u20135\u00a0m\u00b2/student','Min open space':'20%','Sports':'Football (1.7\u00a0ac), athletics, courts','Library':'120\u2013200\u00a0m\u00b2'},
  permit:['Academic buildings, Labs','Dormitories (boarding)','Staff housing','Sports facilities','School clinics','Bookshops'],
  prohibit:['Non-school residential','Markets','Industries','Animal Husbandry (except teaching)','Transport warehouses']},
 
 {cat:'education',code:'Ed T',name:'Tertiary Institutions',ctx:['greenfield','urban'],
- lc:'#CC0000',bg:'#FFF0A0',density:0,
+ lc:'#CC0000',bg:'#FFF176',density:0,
  std:{'Min site area':'30\u00a0acres minimum','Catchment population':'50,000+','Lecture hall':'100\u2013500 capacity','Auditorium':'Min 1,000 capacity','Internal zones':'Academic / Residential / Sports / Commercial / Research'},
  permit:['Hostels, Staff accommodation','Lecture Halls, Labs','Hospitals/Clinics, Police Stations','Commercial (banks, shops)','Research farms, Places of Worship'],
  prohibit:['Industries','Major transport terminals','Warehouses','Large Markets','Saw milling','Crematorium']},
@@ -944,7 +1043,7 @@ var legendGroups=[
    textCol:'#fff'}
 ]},
 {hdr:'Education Zones',icon:'\u2b50',items:[
-  {hex:'#FFFF00',colorName:'Citrus Yellow',
+  {hex:'#FFF176',colorName:'Planning Yellow',
    zones:[
      {code:'Ed P',name:'Pre-School & Basic Schools (Nursery, KG, Primary, JHS)'},
      {code:'Ed S',name:'Senior High Schools & TVET Institutions'},
@@ -1158,7 +1257,6 @@ function tagLabel(c){return{urban:'Built-up',builtup:'Built-up',greenfield:'Gree
 
 function cardHtml(z){
   var uid='zc-'+z.code.replace(/[^a-zA-Z0-9]/g,'');
-  var extraClass=z.cat==='education'?' edu-zone-card':'';
   var tags=z.ctx.map(function(c){return '<span class="ztag">'+tagLabel(c)+'</span>';}).join('');
   var fav=isFav(z.code);
   var note=S.notes[z.code]||'';
@@ -1172,9 +1270,11 @@ function cardHtml(z){
       +makePlotSVG(z.diag.w,z.diag.d,calcZones[z.diag.k])+'</div>';
   }
   var noteHtml=note?'<div class="card-note" onclick="openNoteModal(\''+z.code+'\')">&#128396; '+escHtml(note)+'</div>':'';
-  return '<div class="zone-card'+extraClass+'" id="'+uid+'" style="border-left-color:'+z.lc+'">'
+  var isEduZone=z.cat==='education';
+  var cardStyle='border-left-color:'+z.lc+(isEduZone?';border:3px solid #CC0000;background:linear-gradient(160deg,#FFF9C4,#FFFDE0)':'');
+  return '<div class="zone-card" id="'+uid+'" data-code="'+z.code+'" data-cat="'+z.cat+'" style="'+cardStyle+'">'
     +'<div class="card-hdr">'
-      +'<span class="zbadge" style="background:'+z.bg+';color:'+z.lc+';border-color:'+z.lc+'60">'+z.code+'</span>'
+      +'<span class="zbadge" style="background:'+z.bg+';color:'+z.lc+';border:'+(z.code.indexOf('Ed')===0?'2.5px solid #CC0000':'1px solid '+z.lc+'60')+'">'+z.code+'</span>'
       +'<div class="zinfo">'
         +densBar
         +'<div class="zname">'+z.name+'</div>'
@@ -1687,13 +1787,13 @@ function renderLegend(){
     html+='<div class="leg-group-hdr">'+g.icon+'&nbsp;'+g.hdr+'</div>';
     g.items.forEach(function(item){
       var isLight=isLightColor(item.hex);
-      var badgeStyle='background:'+item.hex+';color:'+(isLight?'#222':'#fff')+';border-color:'+item.hex+'cc';
+      var isEduItem=item.hex==='#FFF176';var badgeStyle=isEduItem?'background:#FFF176;color:#7A0000;border:3px solid #CC0000;font-weight:800;box-shadow:0 0 0 1px #FF000050':'background:'+item.hex+';color:'+(isLight?'#222':'#fff')+';border-color:'+item.hex+'cc';
       var codes=item.zones.map(function(z){
         return '<span class="leg-zbadge" style="'+badgeStyle+'">'+z.code+'</span>';
       }).join('');
       var names=item.zones.map(function(z){return z.name;}).join('<br>');
       html+='<div class="leg-item" onclick="copyHex(\''+item.hex+'\')" title="Click to copy '+item.hex+'">'
-        +'<div class="leg-swatch" style="background:'+item.hex+'"></div>'
+        +'<div class="leg-swatch" style="background:'+item.hex+';'+(isEduItem?'border:3px solid #CC0000;box-shadow:0 0 0 1.5px #FF000060;':'')+'"></div>'
         +'<div class="leg-info">'
           +'<div class="leg-codes">'+codes+'</div>'
           +'<div class="leg-names">'+names+'</div>'
@@ -2627,10 +2727,10 @@ function updateCommunityCalc(){
     +'</div>'
     +'<div class="result-box"><div style="font-weight:700;font-size:12px;margin-bottom:10px;color:var(--green2);font-family:var(--font-head)">&#127979; Required Education Facilities</div>'
     +'<div class="result-stats">'
-    +'<div class="rstat"><div class="rv">'+nurseries+'</div><div class="rl">Nurseries/KG<br><span style="font-size:9px;color:var(--text3)">1 per 2,500 pop</span></div></div>'
-    +'<div class="rstat"><div class="rv">'+primarySchools+'</div><div class="rl">Primary Schools<br><span style="font-size:9px;color:var(--text3)">1 per 5,000 pop</span></div></div>'
-    +'<div class="rstat"><div class="rv">'+jhs+'</div><div class="rl">JHS<br><span style="font-size:9px;color:var(--text3)">1 per 8,000 pop</span></div></div>'
-    +'<div class="rstat"><div class="rv">'+shs+'</div><div class="rl">SHS<br><span style="font-size:9px;color:var(--text3)">1 per 15,000 pop</span></div></div>'
+    +'<div class="rstat fac-result-card" style="padding:10px;border-radius:6px"><div class="rv frc-count">'+nurseries+'</div><div class="rl frc-name">Nurseries/KG</div><div class="frc-standard">1 per 2,500 pop</div></div>'
+    +'<div class="rstat fac-result-card" style="padding:10px;border-radius:6px"><div class="rv frc-count">'+primarySchools+'</div><div class="rl frc-name">Primary Schools</div><div class="frc-standard">1 per 5,000 pop</div></div>'
+    +'<div class="rstat fac-result-card" style="padding:10px;border-radius:6px"><div class="rv frc-count">'+jhs+'</div><div class="rl frc-name">JHS</div><div class="frc-standard">1 per 8,000 pop</div></div>'
+    +'<div class="rstat fac-result-card" style="padding:10px;border-radius:6px"><div class="rv frc-count">'+shs+'</div><div class="rl frc-name">SHS</div><div class="frc-standard">1 per 15,000 pop</div></div>'
     +'</div></div>'
     +'<div class="result-box"><div style="font-weight:700;font-size:12px;margin-bottom:10px;color:var(--green2);font-family:var(--font-head)">&#9877;&#65039; Required Health Facilities</div>'
     +'<div class="result-stats">'
@@ -2826,12 +2926,23 @@ function modalGISExport(){
     +zones.map(function(z,i){
       var cov=z.std['Max building coverage']||z.std['Built-up coverage']||'-';
       var ht=z.std['Max height']||z.std['Height']||'-';
-      return '<tr id="gisr-'+i+'" style="cursor:pointer;background:var(--bg2)" onclick="gisToggleRow('+i+')" onmouseenter="this.style.background=\'var(--bg3)\'" onmouseleave="gisRowHover('+i+',this)">'
+      var isEdu=z.cat==='education';
+      var rowBg=isEdu?'rgba(255,241,118,.15)':'var(--bg2)';
+      var badgeBg=isEdu?'#FFF176':z.bg;
+      var badgeColor=isEdu?'#7A0000':z.lc;
+      var badgeBorder=isEdu?'3px solid #CC0000;box-shadow:0 0 0 1.5px #FF0000':'1px solid '+z.lc+'60';
+      var swatchHtml=isEdu
+        ?'<div style="width:30px;height:20px;background:#FFF176;border:3px solid #CC0000;border-radius:3px;box-shadow:0 0 0 1.5px #FF000070"></div>'
+        :'<div style="width:24px;height:16px;background:'+z.lc+';border-radius:2px;border:1px solid rgba(0,0,0,.2)"></div>';
+      var hexDisplay=isEdu
+        ?'<span style="color:#CC0000;font-weight:700">#FFF176<br><small>#CC0000</small></span>'
+        :'<span style="font-family:monospace">'+z.lc+'</span>';
+      return '<tr id="gisr-'+i+'" style="cursor:pointer;background:'+rowBg+(isEdu?';border-left:4px solid #CC0000':'')+'" onclick="gisToggleRow('+i+')" onmouseenter="this.style.background=\'var(--bg3)\'" onmouseleave="gisRowHover('+i+',this)">'
         +'<td style="padding:5px 8px;border-bottom:1px solid var(--border)"><input type="checkbox" id="gisc-'+i+'" class="gis-chk" style="accent-color:var(--green2)" onclick="event.stopPropagation();gisRowHover('+i+',document.getElementById(\'gisr-'+i+'\'))"/></td>'
-        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border)"><span style="background:'+z.bg+';color:'+z.lc+';padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;border:1px solid '+z.lc+'60">'+z.code+'</span></td>'
-        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:11px;color:var(--text)">'+z.name+'</td>'
-        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border)"><div style="width:24px;height:16px;background:'+z.lc+';border-radius:2px;border:1px solid rgba(0,0,0,.2)"></div></td>'
-        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:10px;font-family:monospace;color:var(--text)">'+z.lc+'</td>'
+        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border)"><span style="background:'+badgeBg+';color:'+badgeColor+';padding:2px 8px;border-radius:3px;font-size:10px;font-weight:700;border:'+badgeBorder+'">'+z.code+'</span></td>'
+        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:11px;color:var(--text)">'+(isEdu?'<strong style="color:#7A0000">':'')+z.name+(isEdu?'</strong>':'')+'</td>'
+        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border)">'+swatchHtml+'</td>'
+        +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:10px;color:var(--text)">'+hexDisplay+'</td>'
         +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2)">'+cov+'</td>'
         +'<td style="padding:5px 8px;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2)">'+ht+'</td>'
         +'</tr>';
@@ -2850,7 +2961,7 @@ function exportCSV(){
   if(!sel.length){showToast('Select at least one zone');return;}
   var rows=['Zone Code,Zone Name,LUSPA Colour (HEX),Category,Max Coverage,Max Height,Min Plot Size,Front Setback,Side Setback,Rear Setback'];
   sel.forEach(function(z){
-    rows.push([z.code,'"'+z.name+'"',z.lc,z.cat,
+    rows.push([z.code,'"'+z.name+'"',(z.cat==='education'?'"#FFF176 fill / #CC0000 outline"':z.lc),z.cat,
       z.std['Max building coverage']||z.std['Built-up coverage']||'',
       z.std['Max height']||z.std['Height']||'',
       z.std['Min plot size']||z.std['Min site area']||'',
@@ -2986,34 +3097,6 @@ function updateRoadWizard(){
 
 
 
-// ── LOGIN ────────────────────────────────────────────────────────
-var currentUser = null;
-var selectedRole = null;
-var roleLabels = {
-  planner:'Spatial Planner', officer:'Dev. Control Officer',
-  engineer:'Engineer / Surveyor', student:'Student / Researcher',
-  commissioner:'Land Commissioner', politician:'Assembly Member / DCE', guest:'Guest'
-};
-
-
-function setUserPill(user){
-  var pill = document.getElementById('userPill');
-  var av   = document.getElementById('userAvatar');
-  var nm   = document.getElementById('userName');
-  var rt   = document.getElementById('userRoleTag');
-  var mn   = document.getElementById('menuName');
-  var mr   = document.getElementById('menuRole');
-  if(!pill) return;
-  pill.style.display = 'flex';
-  var initials = user.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-  if(av) av.textContent = initials || '?';
-  if(nm) nm.textContent = user.name;
-  if(rt) rt.textContent = roleLabels[user.role]||user.role;
-  var loc = [user.district, user.region].filter(Boolean).join(', ');
-  if(mn) mn.textContent = user.name + (user.org?' · '+user.org:'');
-  if(mr) mr.textContent = (roleLabels[user.role]||user.role) + (loc?' | '+loc:'');
-}
-
 // ── PLANNING DASHBOARD ────────────────────────────────────────────
 var dashMode = null;
 var dashConfigs = {
@@ -3089,15 +3172,9 @@ function openDashboard(){
   setTimeout(function(){el.style.opacity='1';},10);
 }
 function checkDashboard(){
-  // Show dashboard only on first visit (no localStorage flag)
-  var seen = false;
-  try{ seen = !!localStorage.getItem('zdashseen'); }catch(e){}
-  if(seen){
-    var el = document.getElementById('dashOverlay');
-    if(el) el.style.display='none';
-  } else {
-    try{ localStorage.setItem('zdashseen','1'); }catch(e){}
-  }
+  // Always show dashboard at startup; dismissed state stored in session only
+  var el = document.getElementById('dashOverlay');
+  if(el){ el.style.display='flex'; el.style.opacity='1'; }
 }
 
 
@@ -3306,22 +3383,22 @@ function runEduCalc(){
 
   var levels=[
     {code:'Nursery',name:'Nursery / Kindergarten',thresh:2000,siteAc:0.5,walkDist:'1.25 km',
-     catchPop:'1,000\u20135,000',classSize:'25\u201335',color:'#BBAA00',
+     catchPop:'1,000\u20135,000',classSize:'25\u201335',color:'#CC0000',bg:'#FFFB87',
      note:'Min 0.5 ac / 2,500 m\u00b2 per LUSPA. 1 per 1,000\u20135,000 population.'},
     {code:'Primary',name:'Primary School (Kinder\u2013P6)',thresh:3500,siteAc:3,walkDist:'2.5 km',
-     catchPop:'1,500\u20136,000',classSize:'35\u201340',color:'#998800',
+     catchPop:'1,500\u20136,000',classSize:'35\u201340',color:'#CC0000',bg:'#FFFB87',
      note:'Min 3 ac / 12,140 m\u00b2 per LUSPA. Classroom: 9 \u00d7 7 m; 1 toilet per 30\u201340 pupils (segregated).'},
     {code:'JHS',name:'Junior High School (JHS)',thresh:7500,siteAc:4,walkDist:'3.2 km',
-     catchPop:'5,000\u201310,000',classSize:'35\u201340',color:'#776600',
+     catchPop:'5,000\u201310,000',classSize:'35\u201340',color:'#CC0000',bg:'#FFFB87',
      note:'Min 4 ac / 16,200 m\u00b2 per LUSPA. Max walking distance 3.2 km for catchment population.'},
     {code:'SHS',name:'Senior High School (SHS)',thresh:15000,siteAc:6,walkDist:'4 km',
-     catchPop:'10,000\u201320,000',classSize:'40\u201350',color:'#554400',
+     catchPop:'10,000\u201320,000',classSize:'40\u201350',color:'#CC0000',bg:'#FFFB87',
      note:'Min 6 ac / 24,281 m\u00b2 per LUSPA. Min open space 20% of site; sports field (1.7 ac football) required.'},
     {code:'TVET',name:'TVET / Vocational School',thresh:20000,siteAc:6,walkDist:'4 km',
-     catchPop:'10,000\u201320,000',classSize:'20\u201330',color:'#332200',
+     catchPop:'10,000\u201320,000',classSize:'20\u201330',color:'#CC0000',bg:'#FFFB87',
      note:'Min 6 ac per LUSPA. Same standards as SHS; workshop spaces required in addition to classrooms.'},
     {code:'Tertiary',name:'Tertiary Institution',thresh:50000,siteAc:30,walkDist:'By transport',
-     catchPop:'50,000+',classSize:'100\u2013500 (lecture hall)',color:'#221100',
+     catchPop:'50,000+',classSize:'100\u2013500 (lecture hall)',color:'#CC0000',bg:'#FFFB87',
      note:'Min 30 acres per LUSPA. Population 50,000+ required. Ed T zone designation. Full campus with residential, sports, commercial zones.'}
   ];
 
@@ -3331,8 +3408,8 @@ function runEduCalc(){
     if(l.thresh===50000&&pop<50000)count=0;
     var land=count*l.siteAc;
     totalLand+=land;totalCount+=count;
-    return '<div class="fac-result-card edu-frc" style="border-left-color:var(--edu-border);background:var(--edu-fill)">'
-      +'<div class="frc-count" style="color:'+l.color+'">'+count+'</div>'
+    return '<div class="fac-result-card" style="border-left-color:#CC0000;background:linear-gradient(135deg,#FFFB87,#fffde8)">'
+      +'<div class="frc-count" style="color:#CC0000">'+count+'</div>'
       +'<div class="frc-name">'+l.name+'</div>'
       +'<div class="frc-site">'+l.siteAc+' ac each = '+land.toFixed(0)+' ac total</div>'
       +'<span class="frc-status '+(count>0?'status-req':'status-no')+'">'+(count>0?'Required':'Not required')+'</span>'
@@ -3351,9 +3428,9 @@ function runEduCalc(){
       if(l.thresh===50000&&pop<50000)count=0;
       var land=(count*l.siteAc).toFixed(1);
       var status=count>0?'<span style="color:var(--green2);font-weight:700">'+count+'</span>':'<span style="color:var(--text3)">Not required</span>';
-      return '<tr><td>'+l.name+'</td><td>'+status+'</td><td>'+l.siteAc+' ac</td><td>'+land+' ac</td><td>'+l.catchPop+'</td><td>'+l.walkDist+'</td></tr>';
+      return '<tr style="border-left:3px solid #CC0000"><td style="color:#7a0000;font-weight:600">'+l.name+'</td><td>'+status+'</td><td>'+l.siteAc+' ac</td><td>'+land+' ac</td><td>'+l.catchPop+'</td><td>'+l.walkDist+'</td></tr>';
     }).join('')
-    +'<tr style="background:rgba(42,90,48,.07);font-weight:700"><td>TOTAL</td><td>'+totalCount+'</td><td></td><td>'+totalLand.toFixed(1)+' ac</td><td colspan="2">All levels combined</td></tr>'
+    +'<tr style="background:rgba(255,251,135,.5);font-weight:700;border-left:3px solid #CC0000"><td style="color:#7a0000">TOTAL</td><td>'+totalCount+'</td><td></td><td>'+totalLand.toFixed(1)+' ac</td><td colspan="2">All levels combined</td></tr>'
     +'</table></div>'
     +'<div class="result-box" style="margin-top:10px">'
     +'<div style="font-weight:700;font-size:13px;margin-bottom:8px;font-family:var(--font-head)">Classroom & Sanitation Standards</div>'
@@ -3522,7 +3599,7 @@ function buildKBIndex(){
    {name:'TVET / Vocational School',pop:'10,000\u201320,000',site:'6 ac',walk:'4 km',search:'tvet vocational technical training'},
    {name:'Tertiary Institution',pop:'50,000+',site:'30 ac min',walk:'By transport',search:'university polytechnic college tertiary higher education'}
   ].forEach(function(e){
-    kbEntries.push({type:'education',icon:'<span style="color:var(--edu-border)">&#127979;</span>',title:e.name,
+    kbEntries.push({type:'education',icon:'&#127979;',title:e.name,
       text:'Catchment: '+e.pop+' | Min site: '+e.site+' | Walk: '+e.walk,
       search:(e.name+' '+e.search+' education school facility luspa standard').toLowerCase(),
       action:function(){openModal('eduCalc');}});
@@ -3578,7 +3655,7 @@ function runKB(){
   // Group by type
   var typeOrder=['zone','health','education','buffer','planning','legal'];
   var typeLabels={zone:'Zone Standards &#127968;',health:'Health Facilities &#9877;&#65039;',
-    education:'<span style="color:var(--edu-border)">&#127979;</span> Education Facilities',buffer:'Buffer & Separation Standards &#9888;&#65039;',
+    education:'Education Facilities &#127979;',buffer:'Buffer & Separation Standards &#9888;&#65039;',
     planning:'Planning Manual &#128205;',legal:'Legal References &#9878;&#65039;'};
   var groups={};
   scored.forEach(function(s){
@@ -3595,8 +3672,7 @@ function runKB(){
         +'<div class="kb-item-text">'+e.text+'</div>'
       +'</div>';
     }).join('');
-    var isEduType=(t==='education');
-    html+='<div class="kb-group"><div class="kb-group-hdr" style="'+(isEduType?'background:var(--edu-border)':'')+'">'+(isEduType?'<span style="font-size:13px">&#127979;</span> ':'')+(isEduType?'Education Facilities':typeLabels[t])+' ('+groups[t].length+' results)</div>'+items+'</div>';
+    html+='<div class="kb-group"><div class="kb-group-hdr">'+typeLabels[t]+' ('+groups[t].length+' results)</div>'+items+'</div>';
   });
   el.innerHTML='<div class="kb-results">'+html+'</div>'
     +'<div style="font-size:11px;color:var(--text3);margin-top:10px;text-align:center">Showing top '+scored.length+' results across all planning content</div>';
@@ -3610,6 +3686,7 @@ if(document.body.classList.contains('dk'))document.getElementById('darkBtn').tex
 initSidebar();
 render();
 renderMisc();
+checkDashboard();
 
 </script>
 
@@ -3693,9 +3770,6 @@ renderMisc();
   </div>
 </div>
 
-
-  
-</div>
 
 <!-- FEEDBACK FLOATING BUTTON -->
 <div id="feedbackFab" style="position:fixed;bottom:28px;right:28px;z-index:700;display:flex;flex-direction:column;align-items:flex-end;gap:8px">
