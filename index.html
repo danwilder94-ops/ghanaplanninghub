@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ghana Planning Hub | LUSPA 2025 — Version 6</title>
+<title>Ghana Planning Hub | LUSPA 2025 — Version 7</title>
 <style>
 
 @import url('data:text/css,');
@@ -627,6 +627,126 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
   background:#FFF176;
   border:3px solid #CC0000;
   box-shadow:0 0 0 1px #FF000060}
+
+/* ═══════════════════════════════════════════════════════════════
+   TIPS & GUIDANCE SYSTEM — Ghana Planning Hub v7
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── GUIDED TOUR ─────────────────────────────────────────────── */
+.tour-panel{position:fixed;background:rgba(5,18,7,.82);z-index:2000;
+  transition:all .38s cubic-bezier(.4,0,.2,1);pointer-events:all}
+#tourCard{position:fixed;z-index:2001;width:min(340px,90vw);background:var(--bg2);
+  border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.45);
+  transition:all .38s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.tour-card-hdr{background:linear-gradient(135deg,var(--hdr),#1e4025);
+  padding:16px 20px;display:flex;align-items:center;gap:10px}
+.tour-card-hdr .t-icon{font-size:22px}
+.tour-card-hdr h3{font-size:14px;font-weight:700;color:#fff;
+  font-family:var(--font-head);flex:1}
+.tour-card-hdr .t-step{font-size:10px;color:rgba(255,255,255,.5);white-space:nowrap}
+.tour-card-body{padding:16px 20px}
+.tour-card-body p{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.tour-roles{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px}
+.tour-role-btn{padding:8px 10px;border:1px solid var(--border2);border-radius:var(--radius-sm);
+  font-size:12px;cursor:pointer;background:var(--bg3);color:var(--text2);
+  font-family:var(--font-body);text-align:left;transition:all .14s}
+.tour-role-btn:hover{background:var(--green-light);border-color:var(--green2);color:var(--green2)}
+.tour-role-btn.sel{background:var(--green2);color:#fff;border-color:var(--green2)}
+.tour-nav{display:flex;align-items:center;gap:8px}
+.tour-nav-btn{padding:7px 16px;border:none;border-radius:var(--radius-sm);font-size:12px;
+  font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all .14s}
+.tour-next{background:var(--green2);color:#fff;flex:1}
+.tour-next:hover{background:var(--green3)}
+.tour-back{background:var(--bg4);color:var(--text2);border:1px solid var(--border2)}
+.tour-skip{background:none;border:none;color:var(--text3);font-size:11px;
+  cursor:pointer;font-family:var(--font-body);margin-left:auto}
+.tour-skip:hover{color:var(--text2)}
+.tour-dots{display:flex;gap:5px;justify-content:center;padding:10px 20px 16px}
+.tour-dot{width:7px;height:7px;border-radius:50%;background:var(--border2);
+  cursor:pointer;transition:all .18s}
+.tour-dot.on{background:var(--green2);width:18px;border-radius:4px}
+.tour-highlight-ring{position:fixed;z-index:1999;pointer-events:none;
+  border:3px solid var(--gold);border-radius:12px;
+  box-shadow:0 0 0 4px rgba(200,150,12,.3),0 0 24px rgba(200,150,12,.4);
+  transition:all .38s cubic-bezier(.4,0,.2,1)}
+
+/* ── CONTEXT-SENSITIVE TIPS ──────────────────────────────────── */
+.ctx-tip{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;
+  background:linear-gradient(135deg,#fffbea,#fffde0);
+  border:1px solid rgba(200,150,12,.35);border-radius:var(--radius-sm);
+  margin-bottom:14px;border-left:4px solid var(--gold)}
+.ctx-tip-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.ctx-tip-inner{flex:1}
+.ctx-tip-title{font-size:11px;font-weight:700;color:var(--gold-text);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.ctx-tip-text{font-size:12px;color:var(--text2);line-height:1.55}
+.ctx-tip-close{background:none;border:none;color:var(--text3);cursor:pointer;
+  font-size:16px;padding:0 2px;flex-shrink:0;line-height:1;margin-top:-1px}
+.ctx-tip-close:hover{color:var(--text)}
+.dk .ctx-tip{background:linear-gradient(135deg,#1e1800,#201a00);
+  border-color:rgba(200,150,12,.3)}
+
+/* ── HELP / HOW DO I DRAWER ──────────────────────────────────── */
+#helpDrawer{position:fixed;right:-360px;top:0;bottom:0;width:340px;
+  background:var(--bg2);border-left:1px solid var(--border);z-index:350;
+  transition:right .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;
+  box-shadow:-6px 0 28px rgba(0,0,0,.15);display:flex;flex-direction:column}
+#helpDrawer.open{right:0}
+.hd-header{background:var(--hdr);padding:16px 18px;display:flex;align-items:center;
+  gap:10px;flex-shrink:0}
+.hd-header h2{font-size:14px;font-weight:700;color:#fff;
+  font-family:var(--font-head);flex:1}
+.hd-close{background:rgba(255,255,255,.15);border:none;color:#fff;
+  width:28px;height:28px;border-radius:50%;font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center}
+.hd-close:hover{background:rgba(255,255,255,.28)}
+.hd-body{padding:14px;flex:1}
+.hd-intro{font-size:12px;color:var(--text2);margin-bottom:14px;line-height:1.55;
+  padding:10px 12px;background:var(--bg3);border-radius:var(--radius-sm);
+  border:1px solid var(--border)}
+.hd-section{margin-bottom:16px}
+.hd-section-title{font-size:10px;font-weight:700;color:var(--green2);
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px;
+  padding-bottom:5px;border-bottom:1px solid var(--border)}
+.hd-task{display:flex;align-items:center;gap:8px;padding:8px 10px;
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  cursor:pointer;margin-bottom:5px;transition:all .14s;background:var(--bg3)}
+.hd-task:hover{background:var(--green-light);border-color:var(--green2);
+  transform:translateX(3px)}
+.hd-task-icon{font-size:16px;flex-shrink:0;width:22px;text-align:center}
+.hd-task-text{flex:1;font-size:12px;color:var(--text);line-height:1.35}
+.hd-task-arrow{color:var(--text3);font-size:12px;flex-shrink:0}
+.hd-task:hover .hd-task-arrow{color:var(--green2)}
+.hd-reset{width:100%;padding:8px;background:none;border:1px solid var(--border2);
+  border-radius:var(--radius-sm);font-size:11px;color:var(--text3);
+  cursor:pointer;font-family:var(--font-body);margin-top:8px;transition:all .14s}
+.hd-reset:hover{border-color:var(--red);color:var(--red)}
+#helpDrawerOverlay{position:fixed;inset:0;background:rgba(0,0,0,.3);
+  z-index:349;display:none}
+#helpDrawerOverlay.open{display:block}
+
+/* ── HELP FAB ────────────────────────────────────────────────── */
+#helpFab{position:fixed;bottom:74px;left:22px;width:46px;height:46px;
+  background:var(--green2);color:#fff;border:none;border-radius:50%;
+  font-size:20px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.28);
+  z-index:400;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;font-family:var(--font-body)}
+#helpFab:hover{background:var(--green3);transform:scale(1.08);
+  box-shadow:0 6px 22px rgba(0,0,0,.38)}
+#helpFab.pulsing{animation:helpPulse 2.5s ease-in-out 3}
+@keyframes helpPulse{
+  0%,100%{box-shadow:0 4px 16px rgba(0,0,0,.28),0 0 0 0 rgba(42,90,48,.5)}
+  50%{box-shadow:0 4px 16px rgba(0,0,0,.28),0 0 0 10px rgba(42,90,48,0)}}
+
+/* ── TOUR ENTRANCE ANIMATION ─────────────────────────────────── */
+@keyframes tourCardIn{from{opacity:0;transform:scale(.94) translateY(8px)}
+  to{opacity:1;transform:scale(1) translateY(0)}}
+#tourCard.entering{animation:tourCardIn .3s ease forwards}
+@media(max-width:600px){
+  .tour-roles{grid-template-columns:1fr}
+  #helpDrawer{width:100%;right:-100%}
+  #helpDrawer.open{right:0}
+}
 
 </style>
 </head>
@@ -1404,7 +1524,7 @@ function openModal(id,extra){
   document.getElementById('modalTitle').textContent=titles[id]||id;
   document.getElementById('modalSub').textContent=subs[id]||'';
   var body=document.getElementById('modalBody');
-  body.innerHTML=getModalContent(id,extra)||'';
+  body.innerHTML=getCtxTip(id)+getModalContent(id,extra);
   document.getElementById('overlay').classList.add('op');
   if(id==='calc')setTimeout(updateCalc,50);
   if(id==='yield')setTimeout(updateYield,50);
@@ -3679,6 +3799,276 @@ function runKB(){
 }
 
 
+
+// ═══════════════════════════════════════════════════════════════
+// TIPS & GUIDANCE SYSTEM
+// ═══════════════════════════════════════════════════════════════
+
+// ── CONTEXT TIPS DATA ────────────────────────────────────────
+var ctxTips={
+  community_calc:{icon:'&#128161;',title:'Community Planning Tip',
+    text:'Before adding new facilities, check what already exists in the catchment area. Deduct 35% of net developable area for non-housing uses per LUSPA LP preparation guidelines. The 30% road reservation is separate from this deduction.'},
+  permit_assistant:{icon:'&#9888;&#65039;',title:'Development Control Tip',
+    text:'All six criteria must be satisfied: plot size, plot width, building coverage, height, all three setbacks, and parking. A single violation is grounds for permit refusal. Document each criterion individually on the application form.'},
+  healthCalc:{icon:'&#9877;&#65039;',title:'Health Planning Tip',
+    text:'Confirm requirements with the District Health Directorate before designating sites. Existing facilities in the catchment area may already serve part of the population, reducing the number of new facilities needed. Travel time matters more than distance in hilly terrain.'},
+  eduCalc:{icon:'&#127979;',title:'Education Planning Tip',
+    text:'Walking distance is the critical standard — primary schools within 2.5 km, JHS within 3.2 km for all children in the catchment. Over-provision wastes scarce land. Always check with the District Education Office before designating new school sites.'},
+  bufferMatrix:{icon:'&#9888;&#65039;',title:'Buffer Standards Tip',
+    text:'Red (Mandatory) distances are LUSPA hard minimums — never compromise them. Orange (Recommended) are EPA or best-practice standards. If you deviate from recommended standards, document your site-specific justification in the planning report.'},
+  road_wizard:{icon:'&#128739;',title:'Road Reservation Tip',
+    text:'Always reserve the full ROW in the Local Plan even if the road will not be built immediately. Future widening within the reserved ROW requires no new land acquisition. Corner truncations are mandatory — 3.5 m (local), 5 m (collector), 10 m (arterial).'},
+  lp:{icon:'&#128205;',title:'Local Plan Tip',
+    text:'The Local Plan is the only plan type that assigns Unique Parcel Numbers (UPN) to individual plots — this is what makes it legally binding at plot level. Incorporate street naming at Step 5 (Scenario Selection), not as an afterthought after zoning.'},
+  sp:{icon:'&#127963;',title:'Structure Plan Tip',
+    text:'The SP must be completed within 18 months of DSDF approval. Land use zones designated in the SP become the legal zoning framework for all Local Plans within the area. Any LP that contradicts an approved SP can be appealed to the RSPC.'},
+  sdf:{icon:'&#128506;',title:'SDF Tip',
+    text:'The SDF is reviewed every 4 years — align your implementation plan with this cycle and with the MTDP. Cost all activities in USD to hedge against currency depreciation. Start the SEA process at inception, not after the draft is complete.'},
+  knowledgeBase:{icon:'&#128270;',title:'Knowledge Base Tip',
+    text:'Try searching for specific planning challenges: "fuel station", "school site", "health centre", "riparian", "setback" or "Act 925". Results are grouped by content type so you can see the full LUSPA context for any planning question in one place.'},
+  compat_matrix:{icon:'&#128200;',title:'Compatibility Tip',
+    text:'If a use is not explicitly listed as permitted in a zone, it is considered prohibited by default under LUSPA. Do not assume conditional approval — always verify with the district Physical Planning Department before advising on any marginal case.'},
+  buffer:{icon:'&#127754;',title:'Riparian Buffer Tip',
+    text:'Buffer widths increase with slope — add 3 m (slope 15-20%), 10 m (20-25%) or 20 m (25-30%) to the base buffer. Add another 30 m if hazardous substances are stored nearby. These adjustments are mandatory under LUSPA 2025.'},
+  checklist:{icon:'&#9989;',title:'Pre-Application Tip',
+    text:'Use this checklist before submitting a planning application, not after. All seven sections must be complete. The most common reason for rejection is incomplete infrastructure documentation and missing survey plans.'},
+  gis_export:{icon:'&#127758;',title:'GIS Export Tip',
+    text:'For QGIS style import, ensure your layer has a field named "zone_code" with exact values matching the zone codes (e.g. "Re A", "CBD"). Use rule-based rendering in QGIS for best results. The GeoJSON export can also be loaded directly into ArcGIS Online.'},
+  healthModule:{icon:'&#129706;',title:'Health Facility Tip',
+    text:'Site selection for health facilities must consider flat, well-drained, non-flood-prone terrain with reliable electricity and water supply. Polyclinics and above require 24-hour ambulance access. Always consult GHS and the District Health Directorate on exact site requirements.'},
+  compare:{icon:'&#9878;&#65039;',title:'Zone Comparison Tip',
+    text:'When comparing Re B and Re D: Re D allows 20 plots/acre but minimum plot is only 40 × 50 ft — suitable for upgrading dense informal settlements. Re B (70 × 100 ft min) gives better amenity. The density difference (10 vs 20 plots/acre) significantly affects facility requirements.'}
+};
+
+function getCtxTip(modalId){
+  var t=ctxTips[modalId];
+  if(!t)return '';
+  var tipKey='tip_dismissed_'+modalId;
+  if(lsGet(tipKey,false))return '';
+  return '<div class="ctx-tip" id="ctip_'+modalId+'">'
+    +'<div class="ctx-tip-icon">'+t.icon+'</div>'
+    +'<div class="ctx-tip-inner">'
+      +'<div class="ctx-tip-title">'+t.title+'</div>'
+      +'<div class="ctx-tip-text">'+t.text+'</div>'
+    +'</div>'
+    +'<button class="ctx-tip-close" onclick="dismissTip(\''+modalId+'\')" title="Dismiss">&#215;</button>'
+  +'</div>';
+}
+function dismissTip(id){
+  var el=document.getElementById('ctip_'+id);
+  if(el){el.style.opacity='0';el.style.transition='opacity .2s';
+    setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},220);}
+  lsSet('tip_dismissed_'+id,true);
+}
+
+// ── HOW DO I DRAWER ───────────────────────────────────────────
+var howDoITasks=[
+  {section:'New Community Layout',tasks:[
+    {icon:'&#127963;',text:'Calculate plots, population & facility requirements',action:"openModal('community_calc')"},
+    {icon:'&#127754;',text:'Find required riparian / water body buffers',action:"openModal('buffer')"},
+    {icon:'&#128739;',text:'Look up road widths and cross-sections',action:"openModal('road_wizard')"},
+    {icon:'&#127979;',text:'Calculate how many schools are needed',action:"openModal('eduCalc')"},
+    {icon:'&#9877;&#65039;',text:'Calculate how many health facilities are needed',action:"openModal('healthCalc')"},
+    {icon:'&#9888;&#65039;',text:'Check industrial / facility buffer distances',action:"openModal('bufferMatrix')"}
+  ]},
+  {section:'Development Permit Review',tasks:[
+    {icon:'&#9989;',text:'Check if a development proposal complies',action:"openModal('permit_assistant')"},
+    {icon:'&#128200;',text:'Find which zones allow a specific use',action:"openModal('compat_matrix')"},
+    {icon:'&#9878;&#65039;',text:'Compare standards of two zones side by side',action:"openModal('compare')"},
+    {icon:'&#9989;',text:'Generate a pre-application checklist',action:"openModal('checklist')"},
+    {icon:'&#128270;',text:'Search all LUSPA standards at once',action:"openModal('knowledgeBase')"}
+  ]},
+  {section:'Prepare a Local Plan',tasks:[
+    {icon:'&#128205;',text:'Follow the 10-step Local Plan procedure',action:"openModal('lp')"},
+    {icon:'&#128101;',text:'Check TSC team composition',action:"openModal('tsc')"},
+    {icon:'&#128101;',text:'Review stakeholder consultation requirements',action:"openModal('consult')"},
+    {icon:'&#9989;',text:'Check approval authorities',action:"openModal('approval')"},
+    {icon:'&#128196;',text:'Data collection guide (what to collect & from whom)',action:"openModal('dataguide')"}
+  ]},
+  {section:'GIS & Mapping',tasks:[
+    {icon:'&#127758;',text:'Export zone colours & standards for QGIS / ArcGIS',action:"openModal('gis_export')"},
+    {icon:'&#127912;',text:'Get official LUSPA hex colour codes for all zones',action:"openModal('legend')"},
+    {icon:'&#9878;&#65039;',text:'Compare two zone standards',action:"openModal('compare')"}
+  ]},
+  {section:'Student Research',tasks:[
+    {icon:'&#128270;',text:'Search all planning standards at once',action:"openModal('knowledgeBase')"},
+    {icon:'&#127968;',text:'Browse all 36 LUSPA zone standards',action:"closeHelpDrawer()"},
+    {icon:'&#9878;&#65039;',text:'Understand legal references (Act 925, LI 2384, etc.)',action:"openModal('legalref')"},
+    {icon:'&#128210;',text:'Learn the three-tier planning system',action:"showPlanPrep()"}
+  ]}
+];
+
+function openHelpDrawer(){
+  var body=document.getElementById('helpDrawerBody');
+  if(body&&!body.hasChildNodes()){
+    var html='<p class="hd-intro">Select a task to jump directly to the right tool or section. Tips are also shown inside each tool when you open it.</p>';
+    howDoITasks.forEach(function(s){
+      html+='<div class="hd-section"><div class="hd-section-title">'+s.section+'</div>';
+      s.tasks.forEach(function(t){
+        html+='<div class="hd-task" onclick="'+t.action+';closeHelpDrawer()">'
+          +'<span class="hd-task-icon">'+t.icon+'</span>'
+          +'<span class="hd-task-text">'+t.text+'</span>'
+          +'<span class="hd-task-arrow">&#8250;</span>'
+        +'</div>';
+      });
+      html+='</div>';
+    });
+    html+='<button class="hd-reset" onclick="resetTour()">&#8635; Restart Guided Tour</button>';
+    body.innerHTML=html;
+  }
+  document.getElementById('helpDrawer').classList.add('open');
+  document.getElementById('helpDrawerOverlay').classList.add('open');
+}
+function closeHelpDrawer(){
+  document.getElementById('helpDrawer').classList.remove('open');
+  document.getElementById('helpDrawerOverlay').classList.remove('open');
+}
+
+// ── GUIDED TOUR ──────────────────────────────────────────────
+var tourStep=0,tourRole='';
+var tourSteps=[
+  {id:null,icon:'&#127468;&#127469;',title:'Welcome to Ghana Planning Hub',
+   text:'A comprehensive offline planning reference for LUSPA Zoning Guidelines & Spatial Plans 2025. Let\'s take a 30-second tour so you can find exactly what you need.',
+   hasRoles:true,next:'Get Started &#8594;'},
+  {id:'cardsArea',icon:'&#127968;',title:'Zone Standards Reference',
+   text:'All 36 LUSPA zones are here with development controls, setbacks, permitted and prohibited uses. Use the search bar to find any zone, standard or keyword instantly.',
+   next:'Next &#8594;'},
+  {id:'sidebar',icon:'&#128295;',title:'Tools & Calculators',
+   text:'The sidebar gives you direct access to 15+ planning tools — Community Calculator, Permit Check, Road Wizard, Health & Education Calculators, Knowledge Base and more.',
+   next:'Next &#8594;'},
+  {id:'modalBody',icon:'&#128270;',title:'Planning Knowledge Base',
+   text:'Search across all LUSPA zones, health standards, education standards, buffer distances and planning manual procedures simultaneously. Try "health centre" or "fuel station".',
+   isModal:'knowledgeBase',next:'Next &#8594;'},
+  {id:null,icon:'&#128196;',title:'Works Completely Offline',
+   text:'Every feature works without internet. All LUSPA standards, calculators, the knowledge base and GIS export are embedded in this single HTML file. No account needed.',
+   next:'Next &#8594;'},
+  {id:'helpFab',icon:'&#10067;',title:'Need Help Anytime?',
+   text:'The ❓ button (bottom-left) opens the "How Do I…" assistant with quick links to the right tool for any planning task. The Feedback button lets you suggest improvements.',
+   next:'Finish Tour &#10003;'}
+];
+
+function startTour(){
+  tourStep=0;tourRole='';
+  renderTourStep();
+  document.getElementById('tourCard').style.display='block';
+  document.getElementById('tourCard').classList.add('entering');
+  setTimeout(function(){document.getElementById('tourCard').classList.remove('entering');},400);
+  document.getElementById('helpFab').classList.add('pulsing');
+}
+function endTour(){
+  ['tourCard','tourPanelTop','tourPanelBottom','tourPanelLeft','tourPanelRight','tourHighlight']
+    .forEach(function(id){var el=document.getElementById(id);if(el)el.style.display='none';});
+  if(tourSteps[tourStep]&&tourSteps[tourStep].isModal)closeModal();
+  lsSet('tourCompleted',true);
+  lsSet('tourRole',tourRole);
+  document.getElementById('helpFab').classList.remove('pulsing');
+  showToast('Tour complete! Use ❓ anytime for planning guidance.');
+}
+function tourNext(){
+  var step=tourSteps[tourStep];
+  if(step.hasRoles&&!tourRole){showToast('Please select your role to continue');return;}
+  if(step.isModal)closeModal();
+  tourStep++;
+  if(tourStep>=tourSteps.length){endTour();return;}
+  renderTourStep();
+}
+function tourBack(){
+  if(tourStep>0){
+    if(tourSteps[tourStep]&&tourSteps[tourStep].isModal)closeModal();
+    tourStep--;renderTourStep();
+  }
+}
+function selectTourRole(role,el){
+  tourRole=role;
+  document.querySelectorAll('.tour-role-btn').forEach(function(b){b.classList.remove('sel');});
+  el.classList.add('sel');
+}
+function resetTour(){lsSet('tourCompleted',false);startTour();}
+
+function renderTourStep(){
+  var step=tourSteps[tourStep];
+  if(!step)return;
+  document.getElementById('tourIcon').innerHTML=step.icon;
+  document.getElementById('tourTitle').textContent=step.title;
+  document.getElementById('tourText').textContent=step.text;
+  document.getElementById('tourStepCount').textContent=(tourStep+1)+' / '+tourSteps.length;
+  document.getElementById('tourNextBtn').innerHTML=step.next||'Next &#8594;';
+  document.getElementById('tourBackBtn').style.display=tourStep>0?'block':'none';
+  // Roles
+  var rolesEl=document.getElementById('tourRoles');
+  if(step.hasRoles){
+    rolesEl.style.display='grid';
+    rolesEl.innerHTML=['&#127963; Planning Professional','&#127979; Student / Researcher',
+      '&#127758; GIS Analyst','&#127959; Development Control Officer','&#128218; Just Exploring']
+      .map(function(r){
+        return '<button class="tour-role-btn'+(tourRole===r?' sel':'')+'" onclick="selectTourRole(\''+r+'\',this)">'+r+'</button>';
+      }).join('');
+  } else {rolesEl.style.display='none';}
+  // Dots
+  document.getElementById('tourDots').innerHTML=tourSteps.map(function(_,i){
+    return '<div class="tour-dot'+(i===tourStep?' on':'')+'" onclick="jumpTour('+i+')"></div>';
+  }).join('');
+  // Open modal if step requires it
+  if(step.isModal)openModal(step.isModal);
+  // Position spotlight
+  setTimeout(function(){positionTourSpotlight(step);},step.isModal?500:50);
+}
+
+function jumpTour(i){tourStep=i;renderTourStep();}
+
+function positionTourSpotlight(step){
+  var pad=10;
+  var targetEl=step.id?document.getElementById(step.id):null;
+  var ring=document.getElementById('tourHighlight');
+  ['tourPanelTop','tourPanelBottom','tourPanelLeft','tourPanelRight'].forEach(function(id){
+    var el=document.getElementById(id);if(el)el.style.display='none';
+  });
+  if(ring)ring.style.display='none';
+  if(!targetEl){positionTourCard(null);return;}
+  var rect=targetEl.getBoundingClientRect();
+  var top=rect.top-pad,left=rect.left-pad;
+  var w=rect.width+pad*2,h=rect.height+pad*2;
+  var bottom=window.innerHeight-rect.bottom-pad,right=window.innerWidth-rect.right-pad;
+  function sp(id,t,l,ww,hh){
+    var el=document.getElementById(id);
+    if(!el)return;
+    el.style.display='block';el.style.top=Math.max(0,t)+'px';el.style.left=Math.max(0,l)+'px';
+    el.style.width=Math.max(0,ww)+'px';el.style.height=Math.max(0,hh)+'px';
+  }
+  sp('tourPanelTop',0,0,window.innerWidth,top);
+  sp('tourPanelBottom',top+h,0,window.innerWidth,window.innerHeight-top-h);
+  sp('tourPanelLeft',top,0,left,h);
+  sp('tourPanelRight',top,left+w,right,h);
+  if(ring){ring.style.display='block';ring.style.top=(top)+'px';ring.style.left=(left)+'px';
+    ring.style.width=w+'px';ring.style.height=h+'px';}
+  positionTourCard(rect,top,left,w,h);
+}
+
+function positionTourCard(rect,spotTop,spotLeft,spotW,spotH){
+  var card=document.getElementById('tourCard');
+  if(!card)return;
+  var cW=340,cH=card.offsetHeight||280,pad=16,vw=window.innerWidth,vh=window.innerHeight;
+  var t,l;
+  if(!rect){t=vh/2-cH/2;l=vw/2-cW/2;}
+  else{
+    t=spotTop+spotH+pad;
+    l=Math.max(pad,Math.min(spotLeft,vw-cW-pad));
+    if(t+cH>vh-pad){t=Math.max(pad,spotTop-cH-pad);}
+    if(t<pad){t=pad;l=spotLeft+spotW+pad;if(l+cW>vw-pad)l=Math.max(pad,spotLeft-cW-pad);}
+  }
+  card.style.top=Math.max(pad,Math.min(t,vh-cH-pad))+'px';
+  card.style.left=Math.max(pad,Math.min(l,vw-cW-pad))+'px';
+}
+
+function checkDashboardAndTour(){
+  var dashSeen=lsGet('dashSeen',false);
+  var tourDone=lsGet('tourCompleted',false);
+  var d=document.getElementById('dashOverlay');
+  if(!dashSeen&&d){d.classList.add('vis');}
+  else if(!tourDone){setTimeout(startTour,800);}
+  else{document.getElementById('helpFab').classList.add('pulsing');}
+}
+
 // ── INIT ─────────────────────────────────────────────────────────
 loadState();
 setView(S.view);
@@ -3686,7 +4076,7 @@ if(document.body.classList.contains('dk'))document.getElementById('darkBtn').tex
 initSidebar();
 render();
 renderMisc();
-checkDashboard();
+checkDashboardAndTour();
 
 </script>
 
@@ -3776,7 +4166,46 @@ checkDashboard();
   <div id="feedbackTooltip" style="background:var(--hdr);color:#fff;font-size:12px;padding:7px 13px;border-radius:8px;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.3);opacity:0;transform:translateY(4px) scale(0.95);transition:all .2s;pointer-events:none;max-width:220px;text-align:center;line-height:1.5">
     Help improve this tool!<br><span style="opacity:.7;font-size:11px">Share your feedback &amp; suggestions</span>
   </div>
-  <a href="https://forms.gle/NL7vduDNHVFACHZr6" target="_blank" rel="noopener"
+  
+<!-- ── GUIDED TOUR SYSTEM ───────────────────────────────────── -->
+<div id="tourPanelTop"    class="tour-panel" style="display:none"></div>
+<div id="tourPanelBottom" class="tour-panel" style="display:none"></div>
+<div id="tourPanelLeft"   class="tour-panel" style="display:none"></div>
+<div id="tourPanelRight"  class="tour-panel" style="display:none"></div>
+<div id="tourHighlight"   class="tour-highlight-ring" style="display:none"></div>
+<div id="tourCard" style="display:none">
+  <div class="tour-card-hdr">
+    <span class="t-icon" id="tourIcon">&#127968;</span>
+    <h3 id="tourTitle">Welcome</h3>
+    <span class="t-step" id="tourStepCount"></span>
+  </div>
+  <div class="tour-card-body">
+    <div id="tourRoles" class="tour-roles" style="display:none"></div>
+    <p id="tourText"></p>
+    <div class="tour-nav">
+      <button class="tour-nav-btn tour-back" id="tourBackBtn" onclick="tourBack()" style="display:none">&#8592; Back</button>
+      <button class="tour-nav-btn tour-next" id="tourNextBtn" onclick="tourNext()">Get Started &#8594;</button>
+      <button class="tour-skip" onclick="endTour()">Skip tour</button>
+    </div>
+  </div>
+  <div class="tour-dots" id="tourDots"></div>
+</div>
+
+<!-- ── HOW DO I DRAWER ──────────────────────────────────────── -->
+<div id="helpDrawerOverlay" onclick="closeHelpDrawer()"></div>
+<div id="helpDrawer">
+  <div class="hd-header">
+    <span style="font-size:20px">&#10067;</span>
+    <h2>How Do I&hellip;</h2>
+    <button class="hd-close" onclick="closeHelpDrawer()">&#215;</button>
+  </div>
+  <div class="hd-body" id="helpDrawerBody"></div>
+</div>
+
+<!-- ── HELP FAB ─────────────────────────────────────────────── -->
+<button id="helpFab" onclick="openHelpDrawer()" title="How do I&hellip; — Planning Tips &amp; Guidance">&#10067;</button>
+
+<a href="https://forms.gle/NL7vduDNHVFACHZr6" target="_blank" rel="noopener"
      style="display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a4020,#2a6030);color:#fff;padding:12px 18px;border-radius:28px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 0 rgba(42,90,48,.4);font-size:13px;font-weight:700;letter-spacing:.3px;transition:transform .18s,box-shadow .18s;animation:fabPulse 3s ease-in-out infinite"
      id="feedbackBtn"
      onmouseenter="document.getElementById('feedbackTooltip').style.opacity='1';document.getElementById('feedbackTooltip').style.transform='translateY(0) scale(1)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,.4)'"
