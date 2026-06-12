@@ -1,9 +1,51 @@
+<!--
+================================================================================
+  GHANA PLANNING HUB
+  © 2026 Daniel Ofori Agyei. All rights reserved.
+
+  Original creator : Daniel Ofori Agyei, MPhil GIS Candidate,
+                     Department of Planning, KNUST, Kumasi, Ghana.
+  Contact          : dan.wilder94@gmail.com
+
+  LICENCE: This tool may be freely used and shared for non-commercial
+  planning purposes provided this copyright notice and creator attribution
+  remain intact and unmodified. No person or organisation may redistribute,
+  republish, rebrand or present this work as their own creation.
+  Derivatives require written permission from the original creator.
+================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Daniel Ofori Agyei">
+<meta name="creator" content="Daniel Ofori Agyei, KNUST Department of Planning">
+<meta name="copyright" content="© 2026 Daniel Ofori Agyei. All rights reserved.">
+<meta name="description" content="Ghana Planning Hub — Original creator: Daniel Ofori Agyei. LUSPA Zoning Guidelines and Spatial Plans Manual 2025. Offline planning reference tool for Ghana.">
+<meta name="version" content="v7.0 — 2026">
+<meta property="og:site_name" content="Ghana Planning Hub by Daniel Ofori Agyei">
+<meta property="og:title" content="Ghana Planning Hub — LUSPA 2025 Offline Reference">
+<meta property="og:description" content="Created by Daniel Ofori Agyei, KNUST. All 36 LUSPA zones, planning calculators, spatial plans manual — offline.">
+<meta name="robots" content="noindex, nofollow">
 <title>Ghana Planning Hub | LUSPA 2025 — Version 7</title>
+.site-footer{
+    display:block !important;
+    background:transparent;
+    border-top:1px solid rgba(255,255,255,0.15);
+    color:rgba(255,255,255,0.80);
+    padding:15px 20px;
+    text-align:center;
+    font-size:0.85rem;
+    margin-top:30px;
+    width:100%;
+    box-sizing:border-box;
+}
+
+.dk .site-footer{
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:rgba(255,255,255,0.70);
+}
 <style>
 
 @import url('data:text/css,');
@@ -276,7 +318,7 @@ main{overflow-y:auto;padding:14px 16px 32px;background:var(--bg)}
   transition:all .2s;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .toast.sh{opacity:1;transform:translateY(0)}
 /* FOOTER */
-footer{display:none}
+footer{display:block;text-align:center;padding:16px 20px 20px;font-size:11px;color:var(--text2);border-top:1px solid var(--border);background:var(--bg2);line-height:1.9;margin-top:24px}
 /* SHORTCUTS MODAL */
 .shortcut-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
 .sc-item{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--bg3);
@@ -863,6 +905,26 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
 <div class="toast" id="toast"></div>
 
 <script>
+/*
+ * ═══════════════════════════════════════════════════════════
+ * GHANA PLANNING HUB
+ * Original creator: Daniel Ofori Agyei
+ * Institution: KNUST, Kumasi, Ghana
+ * Created: 2026 | Version 7
+ * Copyright © 2026 Daniel Ofori Agyei. All rights reserved.
+ *
+ * This tool is built on the LUSPA Revised Zoning Guidelines
+ * and Planning Standards (September 2025) and the Manual for
+ * Preparation of Spatial Plans (September 2025).
+ *
+ * Unauthorised removal of this attribution notice,
+ * rebranding, or claiming authorship of this work is
+ * a violation of the Ghana Copyright Act 2005 (Act 690).
+ *
+ * Report unauthorised copies: dan.wilder94@gmail.com
+ * GitHub: https://danwilder94-ops.github.io/ghanaplanninghub/
+ * ═══════════════════════════════════════════════════════════
+ */
 
 // ── STATE ─────────────────────────────────────────────────────────
 var S={ctx:'all',cat:'all',q:'',view:'grid',favs:[],notes:{},recent:[]};
@@ -895,6 +957,30 @@ function saveNote(code,text){
 }
 
 // ── DATA: ZONES ───────────────────────────────────────────────────
+
+/* HIDDEN DATA FINGERPRINT — DO NOT REMOVE
+ * This fingerprint is embedded in the dataset as proof of original authorship.
+ * Its presence in any copy identifies the source as Ghana Planning Hub
+ * created by Daniel Ofori Agyei. Removing or altering this fingerprint
+ * is a violation of the Ghana Copyright Act 2005 (Act 690). */
+var _toolMeta = {
+  tool: 'Ghana Planning Hub',
+  creator: 'Daniel Ofori Agyei',
+  institution: 'KNUST, Department of Planning, Kumasi, Ghana',
+  contact: 'dan.wilder94@gmail.com',
+  github: 'https://danwilder94-ops.github.io/ghanaplanninghub/',
+  created: '2026',
+  version: 'v7.0',
+  copyright: '© 2026 Daniel Ofori Agyei. All rights reserved.',
+  licence: 'Non-commercial use only. Attribution required. No rebranding.',
+  legalBasis: 'Ghana Copyright Act 2005 (Act 690)',
+  luspaRef: 'LUSPA Revised Zoning Guidelines & Planning Standards, September 2025',
+  manualRef: 'Manual for Preparation of Spatial Plans, September 2025',
+  fingerprint: 'GPH-DOA-2026-KNUST-LUSPA-v7-ORIGINAL',
+  timestamp: '2026-06-11T00:00:00Z'
+};
+Object.freeze(_toolMeta);
+
 var zones=[
 {cat:'residential',code:'Re A',name:'Low Density Residential',ctx:['greenfield','urban'],
  lc:'#CC7722',bg:'#FDF5EC',density:1,
@@ -4217,5 +4303,16 @@ checkDashboardAndTour();
 <style>
 @keyframes fabPulse{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 0 rgba(42,90,48,.4)}50%{box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 8px rgba(42,90,48,0)}}
 </style>
+<footer class="site-footer">
+
+    <div>
+        © 2026 Ghana Planning Hub V7.0
+    </div>
+    <div>
+        Developed by Daniel Ofori Agyei (DOA)
+    </div>
+
+
+</footer>
 </body>
 </html>
