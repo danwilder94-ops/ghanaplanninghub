@@ -29,23 +29,6 @@
 <meta property="og:description" content="Created by Daniel Ofori Agyei, KNUST. All 36 LUSPA zones, planning calculators, spatial plans manual — offline.">
 <meta name="robots" content="noindex, nofollow">
 <title>Ghana Planning Hub | LUSPA 2025 — Version 7</title>
-.site-footer{
-    display:block !important;
-    background:transparent;
-    border-top:1px solid rgba(255,255,255,0.15);
-    color:rgba(255,255,255,0.80);
-    padding:15px 20px;
-    text-align:center;
-    font-size:0.85rem;
-    margin-top:30px;
-    width:100%;
-    box-sizing:border-box;
-}
-
-.dk .site-footer{
-    border-top:1px solid rgba(255,255,255,0.08);
-    color:rgba(255,255,255,0.70);
-}
 <style>
 
 @import url('data:text/css,');
@@ -318,7 +301,11 @@ main{overflow-y:auto;padding:14px 16px 32px;background:var(--bg)}
   transition:all .2s;pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .toast.sh{opacity:1;transform:translateY(0)}
 /* FOOTER */
-footer{display:block;text-align:center;padding:16px 20px 20px;font-size:11px;color:var(--text2);border-top:1px solid var(--border);background:var(--bg2);line-height:1.9;margin-top:24px}
+footer{
+  display:block;text-align:center;padding:24px 20px 28px;font-size:11px;
+  color:var(--text2);border-top:2px solid var(--border);background:var(--bg2);
+  line-height:2;margin-top:0;flex-shrink:0;
+  box-shadow:0 -2px 12px rgba(0,0,0,.06)}
 /* SHORTCUTS MODAL */
 .shortcut-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
 .sc-item{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--bg3);
@@ -790,6 +777,96 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
   #helpDrawer.open{right:0}
 }
 
+/* ── ABOUT US PAGE ────────────────────────────────────────────── */
+.about-hero{background:linear-gradient(135deg,var(--hdr) 0%,#1e4025 100%);
+  border-radius:var(--radius);padding:28px 28px 24px;margin-bottom:20px;
+  position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;right:-30px;top:-30px;
+  width:160px;height:160px;border-radius:50%;
+  background:rgba(200,150,12,.12);pointer-events:none}
+.about-hero::after{content:'';position:absolute;right:40px;bottom:-40px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,.04);pointer-events:none}
+.about-hero-tag{font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.about-hero h2{font-size:22px;font-weight:700;color:#fff;
+  font-family:var(--font-head);margin-bottom:8px;line-height:1.25}
+.about-hero p{font-size:12px;color:rgba(255,255,255,.65);
+  line-height:1.7;max-width:580px;margin-bottom:14px}
+.about-hero-badges{display:flex;gap:7px;flex-wrap:wrap}
+.about-badge{padding:4px 12px;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);border-radius:20px;
+  font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.3px}
+.about-badge.gold{background:rgba(200,150,12,.25);border-color:rgba(200,150,12,.4);color:var(--gold)}
+.about-section{margin-bottom:20px}
+.about-section-title{font-size:13px;font-weight:700;color:var(--green2);
+  font-family:var(--font-head);padding-bottom:7px;
+  border-bottom:2px solid var(--green2);margin-bottom:12px;
+  display:flex;align-items:center;gap:8px}
+.about-body{font-size:12px;color:var(--text2);line-height:1.75}
+.about-body p{margin-bottom:10px}
+.about-body p:last-child{margin-bottom:0}
+.about-vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.about-vm-card{padding:14px 16px;border-radius:var(--radius);border:1px solid var(--border)}
+.about-vm-card.vision{background:linear-gradient(135deg,rgba(42,90,48,.08),rgba(42,90,48,.03))}
+.about-vm-card.mission{background:linear-gradient(135deg,rgba(200,150,12,.08),rgba(200,150,12,.03))}
+.about-vm-icon{font-size:20px;margin-bottom:7px}
+.about-vm-title{font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;margin-bottom:7px}
+.about-vm-card.vision .about-vm-title{color:var(--green2)}
+.about-vm-card.mission .about-vm-title{color:var(--gold-text)}
+.about-vm-text{font-size:11px;color:var(--text2);line-height:1.65}
+.about-offers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:20px}
+.about-offer{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);
+  padding:13px 14px;border-left:3px solid var(--green2)}
+.about-offer-icon{font-size:18px;margin-bottom:6px}
+.about-offer-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:5px}
+.about-offer-text{font-size:11px;color:var(--text2);line-height:1.55}
+.about-serve-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-bottom:20px}
+.about-serve{display:flex;align-items:flex-start;gap:9px;padding:10px 12px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm)}
+.about-serve-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.about-serve-title{font-size:11px;font-weight:700;color:var(--text);margin-bottom:2px}
+.about-serve-text{font-size:10px;color:var(--text2);line-height:1.45}
+.about-commit-list{list-style:none;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:7px;margin-bottom:20px}
+.about-commit-list li{display:flex;align-items:center;gap:8px;
+  padding:8px 12px;background:var(--bg3);border:1px solid var(--border);
+  border-radius:var(--radius-sm);font-size:11px;color:var(--text2)}
+.about-commit-list li::before{content:'✓';color:var(--green2);font-weight:700;
+  font-size:13px;flex-shrink:0}
+.about-status-card{background:linear-gradient(135deg,rgba(200,150,12,.08),rgba(200,150,12,.03));
+  border:1px solid rgba(200,150,12,.3);border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px}
+.about-pilot-badge{background:var(--gold);color:#1a1200;font-size:10px;font-weight:700;
+  padding:3px 10px;border-radius:10px;letter-spacing:.5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.about-cta{background:var(--green2);border-radius:var(--radius);
+  padding:18px 20px;text-align:center;margin-bottom:4px}
+.about-cta h3{font-size:15px;font-weight:700;color:#fff;
+  font-family:var(--font-head);margin-bottom:6px}
+.about-cta p{font-size:12px;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.6}
+.about-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.about-cta-btn{padding:8px 20px;border-radius:var(--radius-sm);font-size:12px;
+  font-weight:600;cursor:pointer;font-family:var(--font-body);border:none;transition:all .14s}
+.about-cta-primary{background:#fff;color:var(--green2)}
+.about-cta-primary:hover{background:var(--gold);color:#1a1200}
+.about-cta-secondary{background:rgba(255,255,255,.15);color:#fff;
+  border:1px solid rgba(255,255,255,.3)!important}
+.about-cta-secondary:hover{background:rgba(255,255,255,.25)}
+.about-creator-card{display:flex;align-items:center;gap:14px;padding:14px 16px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:20px}
+.about-creator-avatar{width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--green2),var(--green3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0}
+.about-creator-name{font-size:13px;font-weight:700;color:var(--text);font-family:var(--font-head)}
+.about-creator-role{font-size:11px;color:var(--text2);margin-top:2px;line-height:1.45}
+.about-creator-links{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.about-creator-link{font-size:10px;color:var(--green2);text-decoration:none;
+  padding:2px 8px;border:1px solid var(--green2);border-radius:8px}
+.about-creator-link:hover{background:var(--green2);color:#fff}
+@media(max-width:600px){.about-vm-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -862,6 +939,7 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
       <button class="sb-tool-btn" onclick="openModal('tsc')">&#128101; TSC Team Composition</button>
       <button class="sb-tool-btn" onclick="openModal('dataguide')">&#128196; Data Collection Guide</button>
       <button class="sb-tool-btn" onclick="openModal('legalref')">&#9878;&#65039; Legal References</button>
+      <button class="sb-tool-btn" onclick="openModal('about')" style="color:var(--gold);border-color:rgba(200,150,12,.3);background:rgba(200,150,12,.07)">&#9432; About Ghana Planning Hub</button>
     </div>
   </div>
   <div class="sb-section">
@@ -876,7 +954,7 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
   </div>
 </aside>
 
-<main id="main">
+<main id="main"><div class="main-inner">
   <div class="main-topbar" id="mainTopbar">
     <span class="count-badge" id="countBadge">All zones</span>
     <div class="view-btns">
@@ -887,6 +965,21 @@ tr.edu-row:hover td{background:rgba(255,241,118,.4)}
   <div class="cards-area" id="cardsArea"></div>
   <div id="planPrepView" style="display:none"></div>
 <div id="miscSection"></div>
+</div><!-- /.main-inner -->
+<footer id="siteFooter">
+  <div style="margin-bottom:8px">
+    <strong style="color:var(--text);font-size:13px;font-family:var(--font-head)">Ghana Planning Hub</strong>
+  </div>
+  <strong style="color:var(--text);font-size:11px">Original Creator: Daniel Ofori Agyei</strong><br>
+  &copy; 2026 &nbsp;&middot;&nbsp; KNUST, Department of Planning &nbsp;&middot;&nbsp; Kumasi, Ghana<br>
+  LUSPA Revised Zoning Guidelines &amp; Planning Standards 2025 &nbsp;&middot;&nbsp; Manual for Preparation of Spatial Plans 2025<br>
+  <span style="color:var(--text3)">This is the original tool. Report unauthorised copies to:&nbsp;</span>
+  <a href="mailto:dan.wilder94@gmail.com" style="color:var(--green2);text-decoration:none">dan.wilder94@gmail.com</a>
+  &nbsp;&middot;&nbsp;
+  <a href="https://danwilder94-ops.github.io/ghanaplanninghub/" target="_blank" rel="noopener" style="color:var(--green2);text-decoration:none">GitHub</a>
+  &nbsp;&middot;&nbsp;
+  <button onclick="openModal('about')" style="background:none;border:none;color:var(--green2);font-size:11px;cursor:pointer;font-family:var(--font-body);padding:0;text-decoration:underline">About Ghana Planning Hub</button>
+</footer>
 </main>
 
 <div id="overlay" onclick="overlayClick(event)">
@@ -1583,7 +1676,8 @@ function openModal(id,extra){
     healthCalc:'Health Facility Calculator',
     eduCalc:'Educational Facility Calculator',
     bufferMatrix:'Buffer & Separation Standards Matrix',
-    knowledgeBase:'Ghana Planning Knowledge Base'};
+    knowledgeBase:'Ghana Planning Knowledge Base',
+    about:'About Ghana Planning Hub'};
   var subs={calc:'Enter dimensions to see setbacks, buildable area and a live diagram',community_calc:'Input site area, population & residential mix to auto-calculate required facilities, plot yield, road and utility reserves',compat_matrix:'Select any land use to instantly see which zones permit or prohibit it across all LUSPA zones',permit_assistant:'Input plot size, zone and building type to get a full compliance check against LUSPA zoning standards',gis_export:'Export zone colours, codes, densities and standards for direct use in QGIS, ArcGIS and GIS tools',road_wizard:'Select a road type to get full reservation standards: ROW, carriageway, sidewalks, drains and utility corridors',
     yield:'Calculate expected plots, units and population for a site',
     buffer:'Required buffer distance for any water body type with slope adjustments',
@@ -1606,7 +1700,8 @@ function openModal(id,extra){
     healthCalc:'Input population — get required health facilities, land area and service coverage',
     eduCalc:'Input population — get required schools at every level with total land requirements',
     bufferMatrix:'All LUSPA mandatory separation distances consolidated in one searchable table',
-    knowledgeBase:'Search across all zones, health, education, buffer and planning manual content simultaneously'};
+    knowledgeBase:'Search across all zones, health, education, buffer and planning manual content simultaneously',
+    about:'Planning Reference \u0026 Decision Support Platform for Ghana \u00b7 Created by Daniel Ofori Agyei, KNUST'};
   document.getElementById('modalTitle').textContent=titles[id]||id;
   document.getElementById('modalSub').textContent=subs[id]||'';
   var body=document.getElementById('modalBody');
@@ -1662,6 +1757,7 @@ function getModalContent(id,extra){
   if(id==='eduCalc')return modalEduCalc();
   if(id==='bufferMatrix')return modalBufferMatrix();
   if(id==='knowledgeBase')return modalKnowledgeBase();
+  if(id==='about')return modalAbout();
   return '';
 }
 
@@ -4155,6 +4251,129 @@ function checkDashboardAndTour(){
   else{document.getElementById('helpFab').classList.add('pulsing');}
 }
 
+
+// ── ABOUT GHANA PLANNING HUB ──────────────────────────────────────
+function modalAbout(){
+  return '<div class="about-hero">'
+    +'<div class="about-hero-tag">Planning Reference &amp; Decision Support Platform for Ghana</div>'
+    +'<h2>Transforming Planning Practice<br>Through Digital Innovation</h2>'
+    +'<p>Ghana Planning Hub is a digital planning reference and decision-support platform developed to improve access to planning standards, zoning requirements, development control guidelines, and spatial planning resources in Ghana.</p>'
+    +'<div class="about-hero-badges">'
+    +'<span class="about-badge gold">&#10003; LUSPA 2025</span>'
+    +'<span class="about-badge">Act 925 Compliant</span>'
+    +'<span class="about-badge">100% Offline</span>'
+    +'<span class="about-badge">Free to Use</span>'
+    +'<span class="about-badge">Version 7</span>'
+    +'</div></div>'
+
+    // Creator card
+    +'<div class="about-creator-card">'
+    +'<div class="about-creator-avatar">&#128100;</div>'
+    +'<div>'
+      +'<div class="about-creator-name">Daniel Ofori Agyei</div>'
+      +'<div class="about-creator-role">MPhil GIS Candidate &nbsp;&middot;&nbsp; Department of Geomatic Engineering, KNUST, Kumasi<br>'
+      +'Urban Planner, LUSPA (Act 925) &nbsp;&middot;&nbsp; </div>'
+      +'<div class="about-creator-links">'
+        +'<a href="mailto:dan.wilder94@gmail.com" class="about-creator-link">&#9993; dan.wilder94@gmail.com</a>'
+        +'<a href="https://danwilder94-ops.github.io/ghanaplanninghub/" target="_blank" rel="noopener" class="about-creator-link">&#127760; GitHub</a>'
+      +'</div>'
+    +'</div></div>'
+
+    // Vision & Mission
+    +'<div class="about-vm-grid">'
+    +'<div class="about-vm-card vision">'
+      +'<div class="about-vm-icon">&#127906;</div>'
+      +'<div class="about-vm-title">Our Vision</div>'
+      +'<div class="about-vm-text">To become Ghana\'s leading digital planning knowledge and decision-support platform, empowering planners, institutions, students, and development practitioners with accessible, practical, and innovative planning tools.</div>'
+    +'</div>'
+    +'<div class="about-vm-card mission">'
+      +'<div class="about-vm-icon">&#127919;</div>'
+      +'<div class="about-vm-title">Our Mission</div>'
+      +'<div class="about-vm-text">To simplify access to planning standards, strengthen planning practice, and support sustainable development by providing reliable planning information, reference tools, and decision-support resources for the planning community in Ghana.</div>'
+    +'</div></div>'
+
+    // What we offer
+    +'<div class="about-section">'
+    +'<div class="about-section-title">&#127970;&nbsp; What We Offer</div>'
+    +'<div class="about-offers-grid">'
+    +[
+      ['&#127968;','Planning Standards Reference','Quick access to all 36 LUSPA zone standards, development controls, planning requirements and land-use regulations based on planning practice in Ghana.'],
+      ['&#128210;','Decision-Support Tools','Interactive calculators for community planning, local plan preparation, development control reviews, land-use planning, site analysis and planning compliance.'],
+      ['&#128270;','Planning Knowledge Base','A growing repository of planning information that helps users locate and understand planning standards, development requirements and procedures more efficiently.'],
+      ['&#127758;','GIS & Spatial Planning Support','Resources and tools to assist GIS professionals, planners, researchers and students in applying planning standards within spatial analysis and mapping workflows.']
+    ].map(function(o){
+      return '<div class="about-offer">'
+        +'<div class="about-offer-icon">'+o[0]+'</div>'
+        +'<div class="about-offer-title">'+o[1]+'</div>'
+        +'<div class="about-offer-text">'+o[2]+'</div>'
+      +'</div>';
+    }).join('')
+    +'</div></div>'
+
+    // Who we serve
+    +'<div class="about-section">'
+    +'<div class="about-section-title">&#128101;&nbsp; Who We Serve</div>'
+    +'<div class="about-serve-grid">'
+    +[
+      ['&#127963;','Planning Professionals','Planners involved in spatial planning, local plan preparation, development management and development control.'],
+      ['&#127979;','Students & Researchers','Accessible learning and reference platform for coursework, studio projects, research and professional development.'],
+      ['&#127758;','GIS & Spatial Analysts','Supporting land-use mapping, spatial analysis, zoning interpretation and planning data applications.'],
+      ['&#127959;','Consultants & Developers','Helping project teams understand planning requirements and development standards during project planning.'],
+      ['&#127963;','Public Institutions & Assemblies','Providing decision-support resources that promote consistency, efficiency and informed planning decisions.']
+    ].map(function(s){
+      return '<div class="about-serve">'
+        +'<span class="about-serve-icon">'+s[0]+'</span>'
+        +'<div><div class="about-serve-title">'+s[1]+'</div>'
+        +'<div class="about-serve-text">'+s[2]+'</div></div>'
+      +'</div>';
+    }).join('')
+    +'</div></div>'
+
+    // Why
+    +'<div class="about-section">'
+    +'<div class="about-section-title">&#10067;&nbsp; Why Ghana Planning Hub?</div>'
+    +'<div class="about-body">'
+    +'<p>Planning information is often scattered across multiple documents, manuals, standards and regulations. Ghana Planning Hub was developed to bridge that gap by providing a centralised platform where users can quickly find the information and tools they need.</p>'
+    +'<p>Our goal is not to replace official planning documents, but to complement them by improving accessibility, understanding and practical application of LUSPA standards.</p>'
+    +'</div></div>'
+
+    // Pilot status
+    +'<div class="about-status-card">'
+    +'<span class="about-pilot-badge">PILOT PHASE</span>'
+    +'<div class="about-body"><p style="margin:0">Ghana Planning Hub is currently in its <strong>Pilot Phase</strong>. The platform continues to evolve through feedback from planners, students, academics, GIS professionals, consultants and other stakeholders. User feedback plays an important role in shaping future enhancements and ensuring the platform remains relevant, practical and valuable.</p></div>'
+    +'</div>'
+
+    // Commitments
+    +'<div class="about-section">'
+    +'<div class="about-section-title">&#9989;&nbsp; Our Commitment</div>'
+    +'<ul class="about-commit-list">'
+    +['Promoting informed planning decisions',
+      'Supporting planning education and professional practice',
+      'Encouraging innovation in planning and spatial development',
+      'Improving access to planning information',
+      'Supporting sustainable and orderly development in Ghana'
+    ].map(function(c){return '<li>'+c+'</li>';}).join('')
+    +'</ul></div>'
+
+    // CTA
+    +'<div class="about-cta">'
+    +'<h3>Get Involved</h3>'
+    +'<p>We welcome feedback, suggestions and collaboration opportunities from members of the planning community. Together, we can help shape a more accessible, efficient and digitally enabled future for planning practice in Ghana.</p>'
+    +'<div class="about-cta-btns">'
+    +'<a href="https://forms.gle/NL7vduDNHVFACHZr6" target="_blank" rel="noopener"><button class="about-cta-btn about-cta-primary">&#128172; Share Feedback</button></a>'
+    +'<button class="about-cta-btn about-cta-secondary" onclick="openModal(\'knowledgeBase\')" style="border:1px solid rgba(255,255,255,.3)">&#128270; Explore Knowledge Base</button>'
+    +'</div></div>'
+
+    // Legal
+    +'<div style="margin-top:14px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:10px;color:var(--text3);line-height:1.65">'
+    +'<strong style="color:var(--text2)">&copy; 2026 Daniel Ofori Agyei. All rights reserved.</strong> &nbsp; '
+    +'This tool may be freely used and shared for non-commercial planning purposes provided this copyright notice and creator attribution remain intact and unmodified. '
+    +'No person or organisation may redistribute, republish, rebrand or present this work as their own creation. '
+    +'Derivatives require written permission from the original creator. Fingerprint ID: GPH-DOA-2026-KNUST-LUSPA-v7-ORIGINAL'
+    +'</div>';
+}
+
+
 // ── INIT ─────────────────────────────────────────────────────────
 loadState();
 setView(S.view);
@@ -4303,16 +4522,5 @@ checkDashboardAndTour();
 <style>
 @keyframes fabPulse{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 0 rgba(42,90,48,.4)}50%{box-shadow:0 4px 20px rgba(0,0,0,.35),0 0 0 8px rgba(42,90,48,0)}}
 </style>
-<footer class="site-footer">
-
-    <div>
-        © 2026 Ghana Planning Hub V7.0
-    </div>
-    <div>
-        Developed by Daniel Ofori Agyei (DOA)
-    </div>
-
-
-</footer>
 </body>
 </html>
